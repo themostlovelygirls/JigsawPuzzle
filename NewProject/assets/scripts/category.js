@@ -7,7 +7,7 @@
 // Learn life-cycle callbacks:
 //  - [Chinese] https://docs.cocos.com/creator/manual/zh/scripting/life-cycle-callbacks.html
 //  - [English] https://www.cocos2d-x.org/docs/creator/manual/en/scripting/life-cycle-callbacks.html
-
+import Category from 'categoryEnum'
 cc.Class({
     extends: cc.Component,
 
@@ -33,10 +33,13 @@ cc.Class({
     },
 
     clickLiteratureButton () {
-
+        require('global').gameCategory = Category.ITERATURE;
+        this.node.runAction(cc.sequence(cc.fadeOut(0.5),cc.callFunc(function(){
+            cc.director.loadScene("roundScene");
+        })));
     },
     
-    clickDrameBtn () {
+    clickDramaBtn () {
 
     },
 
