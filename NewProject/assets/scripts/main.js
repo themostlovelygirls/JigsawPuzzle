@@ -26,7 +26,10 @@ cc.Class({
 
     // LIFE-CYCLE CALLBACKS:
 
-    // onLoad () {},
+    onLoad () {
+        this.node.opacity = 0;
+        this.node.runAction(cc.fadeIn(0.5));
+    },
 
     start () {
         this.getBaseInfo();
