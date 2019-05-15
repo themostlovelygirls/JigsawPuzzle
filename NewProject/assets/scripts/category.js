@@ -17,7 +17,8 @@ cc.Class({
         artBtn: cc.Button,
         danceBtn: cc.Button,
         festivalBtn: cc.Button,
-        skillBtn: cc.Button
+        skillBtn: cc.Button,
+        backBtn: cc.Button
     },
 
     // LIFE-CYCLE CALLBACKS:
@@ -52,7 +53,16 @@ cc.Class({
     },
     
     clickSkillBtn () {
-        
+
+    },
+
+    clickBackBtn (event, customEventData) {
+        cc.log(customEventData);
+        this.node.runAction(cc.sequence(cc.fadeOut(0.5),cc.callFunc(function(){
+            cc.director.loadScene("mainScene");
+        })));
     }
+
+
     // update (dt) {},
 });
