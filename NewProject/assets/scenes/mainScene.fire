@@ -41,8 +41,8 @@
     },
     "_scale": {
       "__type__": "cc.Vec3",
-      "x": 1.2831405725852072,
-      "y": 1.2831405725852072,
+      "x": 0.3685673043227752,
+      "y": 0.3685673043227752,
       "z": 1
     },
     "_quat": {
@@ -247,8 +247,8 @@
     "_color": {
       "__type__": "cc.Color",
       "r": 255,
-      "g": 255,
-      "b": 255,
+      "g": 244,
+      "b": 233,
       "a": 255
     },
     "_contentSize": {
@@ -380,9 +380,9 @@
     "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
-      "r": 224,
+      "r": 255,
       "g": 255,
-      "b": 235,
+      "b": 255,
       "a": 255
     },
     "_contentSize": {
@@ -440,9 +440,9 @@
     "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
-      "r": 13,
-      "g": 0,
-      "b": 46,
+      "r": 141,
+      "g": 83,
+      "b": 75,
       "a": 255
     },
     "_contentSize": {
@@ -603,7 +603,7 @@
     },
     "_enabled": true,
     "_spriteFrame": {
-      "__uuid__": "f0048c10-f03e-4c97-b9d3-3506e1d58952"
+      "__uuid__": "bc4e4eb0-b9c2-4ddf-a53c-5f3fb79c952e"
     },
     "_type": 1,
     "_sizeMode": 0,
@@ -666,8 +666,8 @@
     ],
     "_N$interactable": true,
     "_N$enableAutoGrayEffect": false,
-    "_N$transition": 2,
-    "transition": 2,
+    "_N$transition": 3,
+    "transition": 3,
     "_N$normalColor": {
       "__type__": "cc.Color",
       "r": 230,
@@ -836,9 +836,9 @@
     "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
-      "r": 224,
+      "r": 255,
       "g": 255,
-      "b": 235,
+      "b": 255,
       "a": 255
     },
     "_contentSize": {
@@ -896,9 +896,9 @@
     "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
-      "r": 0,
-      "g": 0,
-      "b": 0,
+      "r": 141,
+      "g": 83,
+      "b": 75,
       "a": 255
     },
     "_contentSize": {
@@ -1059,7 +1059,7 @@
     },
     "_enabled": true,
     "_spriteFrame": {
-      "__uuid__": "f0048c10-f03e-4c97-b9d3-3506e1d58952"
+      "__uuid__": "bc4e4eb0-b9c2-4ddf-a53c-5f3fb79c952e"
     },
     "_type": 1,
     "_sizeMode": 0,
@@ -1118,8 +1118,8 @@
     "clickEvents": [],
     "_N$interactable": true,
     "_N$enableAutoGrayEffect": false,
-    "_N$transition": 2,
-    "transition": 2,
+    "_N$transition": 3,
+    "transition": 3,
     "_N$normalColor": {
       "__type__": "cc.Color",
       "r": 230,
@@ -1163,7 +1163,7 @@
       "a": 200
     },
     "_N$normalSprite": {
-      "__uuid__": "f0048c10-f03e-4c97-b9d3-3506e1d58952"
+      "__uuid__": "bc4e4eb0-b9c2-4ddf-a53c-5f3fb79c952e"
     },
     "_N$pressedSprite": {
       "__uuid__": "e9ec654c-97a2-4787-9325-e6a10375219a"
@@ -1278,9 +1278,9 @@
     "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
-      "r": 224,
+      "r": 255,
       "g": 255,
-      "b": 235,
+      "b": 255,
       "a": 255
     },
     "_contentSize": {
@@ -1338,9 +1338,9 @@
     "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
-      "r": 0,
-      "g": 0,
-      "b": 0,
+      "r": 141,
+      "g": 83,
+      "b": 75,
       "a": 255
     },
     "_contentSize": {
@@ -1501,7 +1501,7 @@
     },
     "_enabled": true,
     "_spriteFrame": {
-      "__uuid__": "f0048c10-f03e-4c97-b9d3-3506e1d58952"
+      "__uuid__": "bc4e4eb0-b9c2-4ddf-a53c-5f3fb79c952e"
     },
     "_type": 1,
     "_sizeMode": 0,
@@ -1560,8 +1560,8 @@
     "clickEvents": [],
     "_N$interactable": true,
     "_N$enableAutoGrayEffect": false,
-    "_N$transition": 2,
-    "transition": 2,
+    "_N$transition": 3,
+    "transition": 3,
     "_N$normalColor": {
       "__type__": "cc.Color",
       "r": 230,
@@ -1605,7 +1605,7 @@
       "a": 200
     },
     "_N$normalSprite": {
-      "__uuid__": "f0048c10-f03e-4c97-b9d3-3506e1d58952"
+      "__uuid__": "bc4e4eb0-b9c2-4ddf-a53c-5f3fb79c952e"
     },
     "_N$pressedSprite": {
       "__uuid__": "e9ec654c-97a2-4787-9325-e6a10375219a"
@@ -1720,9 +1720,9 @@
     "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
-      "r": 224,
+      "r": 255,
       "g": 255,
-      "b": 235,
+      "b": 255,
       "a": 255
     },
     "_contentSize": {
@@ -1780,9 +1780,9 @@
     "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
-      "r": 13,
-      "g": 0,
-      "b": 46,
+      "r": 141,
+      "g": 83,
+      "b": 75,
       "a": 255
     },
     "_contentSize": {
@@ -1943,7 +1943,7 @@
     },
     "_enabled": true,
     "_spriteFrame": {
-      "__uuid__": "f0048c10-f03e-4c97-b9d3-3506e1d58952"
+      "__uuid__": "bc4e4eb0-b9c2-4ddf-a53c-5f3fb79c952e"
     },
     "_type": 1,
     "_sizeMode": 0,
@@ -2002,8 +2002,8 @@
     "clickEvents": [],
     "_N$interactable": true,
     "_N$enableAutoGrayEffect": false,
-    "_N$transition": 2,
-    "transition": 2,
+    "_N$transition": 3,
+    "transition": 3,
     "_N$normalColor": {
       "__type__": "cc.Color",
       "r": 230,
@@ -2047,7 +2047,7 @@
       "a": 200
     },
     "_N$normalSprite": {
-      "__uuid__": "f0048c10-f03e-4c97-b9d3-3506e1d58952"
+      "__uuid__": "bc4e4eb0-b9c2-4ddf-a53c-5f3fb79c952e"
     },
     "_N$pressedSprite": {
       "__uuid__": "e9ec654c-97a2-4787-9325-e6a10375219a"
@@ -2245,15 +2245,15 @@
     "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
-      "r": 0,
-      "g": 0,
-      "b": 0,
+      "r": 141,
+      "g": 83,
+      "b": 75,
       "a": 255
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 124.47,
-      "height": 50
+      "width": 93.35,
+      "height": 40
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -2262,7 +2262,7 @@
     },
     "_position": {
       "__type__": "cc.Vec3",
-      "x": 50,
+      "x": 20,
       "y": 500,
       "z": 0
     },
@@ -2297,8 +2297,8 @@
     "_useOriginalSize": false,
     "_string": "等级: 1",
     "_N$string": "等级: 1",
-    "_fontSize": 40,
-    "_lineHeight": 50,
+    "_fontSize": 30,
+    "_lineHeight": 40,
     "_enableWrapText": true,
     "_N$file": null,
     "_isSystemFontUsed": true,
@@ -2330,15 +2330,15 @@
     "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
-      "r": 0,
-      "g": 0,
-      "b": 0,
+      "r": 141,
+      "g": 83,
+      "b": 75,
       "a": 255
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 124.47,
-      "height": 50
+      "width": 93.35,
+      "height": 40
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -2347,7 +2347,7 @@
     },
     "_position": {
       "__type__": "cc.Vec3",
-      "x": 50,
+      "x": 20,
       "y": 450,
       "z": 0
     },
@@ -2382,8 +2382,8 @@
     "_useOriginalSize": false,
     "_string": "积分: 0",
     "_N$string": "积分: 0",
-    "_fontSize": 40,
-    "_lineHeight": 50,
+    "_fontSize": 30,
+    "_lineHeight": 40,
     "_enableWrapText": true,
     "_N$file": null,
     "_isSystemFontUsed": true,
@@ -2415,15 +2415,15 @@
     "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
-      "r": 0,
-      "g": 0,
-      "b": 0,
+      "r": 141,
+      "g": 83,
+      "b": 75,
       "a": 255
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 204.47,
-      "height": 50
+      "width": 153.35,
+      "height": 40
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -2432,7 +2432,7 @@
     },
     "_position": {
       "__type__": "cc.Vec3",
-      "x": 50,
+      "x": 20,
       "y": 400,
       "z": 0
     },
@@ -2467,8 +2467,8 @@
     "_useOriginalSize": false,
     "_string": "对战等级: 1",
     "_N$string": "对战等级: 1",
-    "_fontSize": 40,
-    "_lineHeight": 50,
+    "_fontSize": 30,
+    "_lineHeight": 40,
     "_enableWrapText": true,
     "_N$file": null,
     "_isSystemFontUsed": true,
@@ -2500,15 +2500,15 @@
     "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
-      "r": 0,
-      "g": 0,
-      "b": 0,
+      "r": 141,
+      "g": 83,
+      "b": 75,
       "a": 255
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 204.47,
-      "height": 50
+      "width": 153.35,
+      "height": 40
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -2517,7 +2517,7 @@
     },
     "_position": {
       "__type__": "cc.Vec3",
-      "x": 50,
+      "x": 20,
       "y": 350,
       "z": 0
     },
@@ -2552,8 +2552,8 @@
     "_useOriginalSize": false,
     "_string": "对战积分: 0",
     "_N$string": "对战积分: 0",
-    "_fontSize": 40,
-    "_lineHeight": 50,
+    "_fontSize": 30,
+    "_lineHeight": 40,
     "_enableWrapText": true,
     "_N$file": null,
     "_isSystemFontUsed": true,
