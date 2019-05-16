@@ -13,7 +13,9 @@ cc.Class({
 
     properties: {
         roundPrefab: cc.Prefab,
-        roundLayout: cc.Layout,
+        roundLayoutPrefab: cc.Prefab,
+        roundPageView: cc.PageView,
+        roundIndicator: cc.PageViewIndicator,
         toggle: cc.ToggleContainer,
         difficulty: cc.Label,
         category: cc.Label
@@ -34,28 +36,51 @@ cc.Class({
         this.category.string = Category.properties[require('global').gameCategory].name;
         //1 得到个人闯关记录<--difficulty
         //2 得到所有图片
-        
         this.rounds = [];
         /**
          * stub↓
          */
-        for(let i = 0; i < 4; i++){
+        var imglen = 9;
+        for(let i = 0; i < imglen; i++){
             let round = cc.instantiate(this.roundPrefab);
-            round.getComponent('roundImgAndStar').setStars(3-i);
+            round.getComponent('roundImgAndStar').setStars(3-i%4);
+            round.getComponent('roundImgAndStar').setImage("url");
             this.rounds.push(round);
         }
+        let roundIndex = 0;
+        for(let i = 0; i <= imglen/4; i++){
+            let roundLayout = cc.instantiate(this.roundLayoutPrefab);
+            let count = 0;
+            while(roundIndex<this.rounds.length&&count<4){
+                roundLayout.addChild(this.rounds[roundIndex]);
+                count++;
+                roundIndex++;
+            }
+            //roundLayout.updateLayout();
+            this.roundPageView.addPage(roundLayout);
+            roundLayout.setPosition(-360,-640);
+        }
+        this.roundPageView.content.setPosition(360*imglen/4,0);
+        //this.roundIndicator.start();
         /**
          * stub↑
          */
-        for(let i = 0; i < this.rounds.length; i++){
+        /* for(let i = 0; i < this.rounds.length; i++){
             this.roundLayout.node.addChild(this.rounds[i]);
-        }
+        } 
         this.roundLayout.updateLayout();
-        //cc.log(this.roundLayout.getComponent());
+        */
     },
     
     setDifficulty (event, customEventData) {
         this.difficulty.string = "难度: "+ customEventData;
+    },
+
+    clickBackBtn (event, customEventData) {
+        cc.log(customEventData);
+        this.node.runAction(cc.sequence(cc.fadeOut(0.5),cc.callFunc(function(){
+            cc.director.loadScene("categoryScene");
+        })));
     }
 
 

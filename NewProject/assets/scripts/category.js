@@ -40,23 +40,38 @@ cc.Class({
     },
     
     clickDramaBtn () {
-
+        require('global').gameCategory = Category.DRAMA;
+        this.node.runAction(cc.sequence(cc.fadeOut(0.5),cc.callFunc(function(){
+            cc.director.loadScene("roundScene");
+        })));
     },
 
     clickArtBtn () {
-
+        require('global').gameCategory = Category.ART;
+        this.node.runAction(cc.sequence(cc.fadeOut(0.5),cc.callFunc(function(){
+            cc.director.loadScene("roundScene");
+        })));
     },
 
     clickDanceBtn () {
-
+        require('global').gameCategory = Category.DANCE;
+        this.node.runAction(cc.sequence(cc.fadeOut(0.5),cc.callFunc(function(){
+            cc.director.loadScene("roundScene");
+        })));
     },
     
     clickFestivalBtn () {
-
+        require('global').gameCategory = Category.FESTIVAL;
+        this.node.runAction(cc.sequence(cc.fadeOut(0.5),cc.callFunc(function(){
+            cc.director.loadScene("roundScene");
+        })));
     },
     
     clickSkillBtn () {
-
+        require('global').gameCategory = Category.SKILL;
+        this.node.runAction(cc.sequence(cc.fadeOut(0.5),cc.callFunc(function(){
+            cc.director.loadScene("roundScene");
+        })));
     },
 
     clickBackBtn (event, customEventData) {

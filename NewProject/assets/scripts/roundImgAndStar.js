@@ -26,8 +26,8 @@ cc.Class({
 
     },
 
-    setImage () {
-        //
+    setImage (url) {
+        this.setStaticImg("headImg",this.roundImg);
     },
 
     setStars (number) {
