@@ -50,5 +50,12 @@ cc.Class({
         this.node.runAction(cc.sequence(cc.fadeOut(0.5),cc.callFunc(function(){
             cc.director.loadScene("categoryScene");
         })));
+    },
+
+    clickAlbumBtn (event, customEventData) {
+        //cc.log("click!" + customEventData);
+        this.node.runAction(cc.sequence(cc.fadeOut(0.5),cc.callFunc(function(){
+            cc.director.loadScene("albumScene");
+        })));
     }
 });
