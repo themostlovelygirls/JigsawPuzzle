@@ -41,12 +41,11 @@ cc.Class({
 
     getRoundRecord(){
         this.category.string = Category.properties[require('global').gameCategory].name;
-        //1 得到所有图片信息
-        this.getImages();
-        //2 得到个人闯关记录<--difficulty
-        this.getRoundRecord();
-
-
+        
+        
+    },
+/* 
+    makeLayoutMock() {
         this.rounds = [];
         var imglen = 9;
         for(let i = 0; i < imglen; i++){
@@ -70,39 +69,78 @@ cc.Class({
             roundLayout.setPosition(-360,-640);
         }
         this.roundPageView.content.setPosition(360*imglen/4,0);
-        
     },
-
-    getRoundRecord () {
+ */
+    getRecord () {
+        console.log("getRoundRecord:");
         var self = this;
         wx.cloud.callFunction({
             name: 'getRoundRecord',
             data: {
                 id: require('global').userid,
                 difficulty: self.diff,
-                category: require('global').gameCategory.value,
+                category: Category.properties[require('global').gameCategory].value,
             },
             success: function(res) {
                 console.log(res.result);
                 self.roundRecord.concat(res.result);
+                self.initRecord();
             },
             fail: console.error
         })
     },
 
-    getImages () {
+    initRecord () {
+        for(let i = 0; i < this.roundRecord.)
+        for(let i = 0; i < this.rounds.length; i++){
+            let round = rounds[i];
+            let index = round.getComponent('roundImgAndStar').getIndex();
+
+        }
+    },
+
+    getAllImages () {
+        console.log("getAllImages:");
         var self = this;
         wx.cloud.callFunction({
             name: 'getAllImages',
             data: {
-                category: require('global').gameCategory.value,
+                category: Category.properties[require('global').gameCategory].value,
             },
             success: function(res) {
                 console.log(res.result);
                 self.allImages.concat(res.result);
+                self.initAllImages();
+                self.getRecord();
             },
             fail: console.error
         })
+    },
+
+    initAllImages () {
+        this.rounds = [];
+        var imglen = this.allImages.length;
+        for(let i = 0; i < imglen; i++){
+            let round = cc.instantiate(this.roundPrefab);
+            //round.getComponent('roundImgAndStar').setStars(0);
+            round.getComponent('roundImgAndStar').setImage(this.allImages[i].url);
+            round.getComponent('roundImgAndStar').setIndex(this.allImages[i].index);
+            this.rounds.push(round);
+        }
+        let roundIndex = 0;
+        for(let i = 0; i <= imglen/4; i++){
+            let roundLayout = cc.instantiate(this.roundLayoutPrefab);
+            let count = 0;
+            while(roundIndex<this.rounds.length&&count<4){
+                roundLayout.addChild(this.rounds[roundIndex]);
+                count++;
+                roundIndex++;
+            }
+            //roundLayout.updateLayout();
+            this.roundPageView.addPage(roundLayout);
+            roundLayout.setPosition(-360,-640);
+        }
+        this.roundPageView.content.setPosition(360*imglen/4,0);
     },
     
     setDifficulty (event, customEventData) {

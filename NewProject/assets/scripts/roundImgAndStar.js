@@ -15,7 +15,8 @@ cc.Class({
         star1: cc.Sprite,
         star2: cc.Sprite,
         star3: cc.Sprite,
-        roundImg: cc.Sprite
+        roundImg: cc.Sprite,
+        index: 0
     },
 
     // LIFE-CYCLE CALLBACKS:
@@ -24,6 +25,14 @@ cc.Class({
 
     start () {
 
+    },
+
+    getIndex (){
+        return this.index;
+    },
+
+    setIndex (i){
+        this.index = i;
     },
 
     setImage (url) {
