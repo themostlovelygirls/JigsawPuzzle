@@ -28,7 +28,7 @@ cc.Class({
 
     onLoad () {
         this.node.opacity = 0;
-        this.node.runAction(cc.fadeIn(0.5));
+        this.node.runAction(cc.fadeIn(3));
     },
 
     start () {
@@ -41,17 +41,17 @@ cc.Class({
 
     getRoundRecord(){
         this.category.string = Category.properties[require('global').gameCategory].name;
-        
-        
+        this.getAllImages();
+        //this.makeLayoutMock();
     },
-/* 
+
     makeLayoutMock() {
         this.rounds = [];
         var imglen = 9;
         for(let i = 0; i < imglen; i++){
             let round = cc.instantiate(this.roundPrefab);
             round.getComponent('roundImgAndStar').setStars(3-i%4);
-            round.getComponent('roundImgAndStar').setImage("url");
+            //round.getComponent('roundImgAndStar').setImage("http://pic37.nipic.com/20140113/8800276_184927469000_2.png");
             this.rounds.push(round);
         }
 
@@ -70,8 +70,11 @@ cc.Class({
         }
         this.roundPageView.content.setPosition(360*imglen/4,0);
     },
- */
+
     getRecord () {
+        for(let j = 0; j < this.rounds.length; j++){
+            this.rounds[j].getComponent('roundImgAndStar').lock();
+        }
         console.log("getRoundRecord:");
         var self = this;
         wx.cloud.callFunction({
@@ -83,7 +86,7 @@ cc.Class({
             },
             success: function(res) {
                 console.log(res.result);
-                self.roundRecord.concat(res.result);
+                self.roundRecord = res.result;
                 self.initRecord();
             },
             fail: console.error
@@ -91,11 +94,18 @@ cc.Class({
     },
 
     initRecord () {
-        for(let i = 0; i < this.roundRecord.)
-        for(let i = 0; i < this.rounds.length; i++){
-            let round = rounds[i];
-            let index = round.getComponent('roundImgAndStar').getIndex();
-
+        for(let i = 0; i < this.roundRecord.length; i++){
+            let index = this.roundRecord[i].index;
+            for(let j = 0; j < this.rounds.length; j++){
+                let round = this.rounds[j];
+                if (index == round.getComponent('roundImgAndStar').getIndex()){
+                    round.getComponent('roundImgAndStar').setStars(this.roundRecord[i].completition);
+                    round.getComponent('roundImgAndStar').setDifficulty(this.roundRecord[i].difficulty);
+                    round.getComponent('roundImgAndStar').fadeLock();
+                    round.getComponent('roundImgAndStar').setLockBool(false);
+                    break;
+                }
+            }
         }
     },
 
@@ -109,43 +119,47 @@ cc.Class({
             },
             success: function(res) {
                 console.log(res.result);
-                self.allImages.concat(res.result);
-                self.initAllImages();
+                self.allImages = res.result;
+                console.log(self.allImages);
+                console.log("----")
+                self.initAllImages(self);
                 self.getRecord();
             },
             fail: console.error
         })
     },
 
-    initAllImages () {
-        this.rounds = [];
-        var imglen = this.allImages.length;
+    initAllImages (self) {
+        console.log("init all images");
+        self.rounds = [];
+        var imglen = self.allImages.length;
         for(let i = 0; i < imglen; i++){
-            let round = cc.instantiate(this.roundPrefab);
+            let round = cc.instantiate(self.roundPrefab);
             //round.getComponent('roundImgAndStar').setStars(0);
             round.getComponent('roundImgAndStar').setImage(this.allImages[i].url);
-            round.getComponent('roundImgAndStar').setIndex(this.allImages[i].index);
-            this.rounds.push(round);
+            round.getComponent('roundImgAndStar').setIndex(self.allImages[i].index);
+            self.rounds.push(round);
         }
         let roundIndex = 0;
-        for(let i = 0; i <= imglen/4; i++){
-            let roundLayout = cc.instantiate(this.roundLayoutPrefab);
+        for(let i = 0; i < (imglen-1)/4; i++){
+            let roundLayout = cc.instantiate(self.roundLayoutPrefab);
             let count = 0;
-            while(roundIndex<this.rounds.length&&count<4){
-                roundLayout.addChild(this.rounds[roundIndex]);
+            while(roundIndex<self.rounds.length&&count<4){
+                roundLayout.addChild(self.rounds[roundIndex]);
                 count++;
                 roundIndex++;
             }
             //roundLayout.updateLayout();
-            this.roundPageView.addPage(roundLayout);
+            self.roundPageView.addPage(roundLayout);
             roundLayout.setPosition(-360,-640);
         }
-        this.roundPageView.content.setPosition(360*imglen/4,0);
+        self.roundPageView.content.setPosition(360*Math.floor((imglen-1)/4),0);
     },
     
     setDifficulty (event, customEventData) {
         this.difficulty.string = "难度: "+ customEventData + " X " + customEventData;
         this.diff = parseInt(customEventData);
+        this.getRecord();
     },
 
     clickBackBtn (event, customEventData) {

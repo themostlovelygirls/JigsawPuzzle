@@ -16,7 +16,10 @@ cc.Class({
         star2: cc.Sprite,
         star3: cc.Sprite,
         roundImg: cc.Sprite,
-        index: 0
+        index: 1,
+        difficulty: 3,
+        locked: true,
+        lockImg: cc.Sprite,
     },
 
     // LIFE-CYCLE CALLBACKS:
@@ -36,7 +39,8 @@ cc.Class({
     },
 
     setImage (url) {
-        this.setStaticImg("headImg",this.roundImg);
+        //this.setStaticImg("headImg",this.roundImg);
+        this.setOnlineImg(url, this.roundImg);
     },
 
     setStars (number) {
@@ -48,6 +52,14 @@ cc.Class({
         }
     },
 
+    setDifficulty (diff) {
+        this.difficulty = diff;
+    },
+
+    setLockBool (lockbool){
+        this.locked = lockbool;
+    },
+
     setStaticImg (url, node) {
         cc.loader.loadRes(url, cc.SpriteFrame, function (err, spriteFrame) {
             node.spriteFrame = spriteFrame;
@@ -57,7 +69,43 @@ cc.Class({
     setOnlineImg (url, node) {
         cc.loader.load(url , function (err, texture) {
             node.spriteFrame = new cc.SpriteFrame(texture);
+            //console.log(err);
         })
-    }
+    },
     // update (dt) {},
+
+    fadeLock (){
+        this.fadeOut(this.lockImg.node);
+    },
+
+    fadeOut (node) {
+        for(let j = 255; j >=0; j-=0.01){
+            (function(e){
+                setTimeout(function(){
+                    node.opacity = e;
+                }, 200);
+            })(j);
+        }
+    },
+
+
+
+    lock () {
+        this.setLockBool(true);
+        this.lockImg.node.opacity = 255;
+        this.setStaticImg("starEmpty", this.star1);
+        this.setStaticImg("starEmpty", this.star2);
+        this.setStaticImg("starEmpty", this.star3);
+    },
+
+    clickBtn (event, customEventData) {
+        console.log("click round!");
+        if(!this.locked){
+            require('global').index = this.index;
+            require('global').difficulty = this.difficulty;
+            this.node.runAction(cc.sequence(cc.fadeOut(0.5),cc.callFunc(function(){
+                cc.director.loadScene("gameScene");
+            })));
+        }
+    }
 });
