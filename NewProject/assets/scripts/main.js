@@ -32,10 +32,39 @@ cc.Class({
     },
 
     start () {
-        this.getBaseInfo();
+        try{
+            wx.cloud.init();
+            try{
+                this.getWeChatBaseInfo();
+            }catch(e){
+                this.getMockBaseInfo();
+                console.log(e);
+            }
+        }catch(ex){
+            console.log(ex);
+        }
     },
     
-    getBaseInfo () {
+
+    getWeChatBaseInfo () {
+        var self = this;
+        wx.cloud.callFunction({
+            name: 'getUserInfo',
+            data: {
+                id: require('global').userid,
+            },
+            success: function(res) {
+                console.log(res.result);
+                self.level.string = '等级: '+ res.result.level;
+                self.grade.string = '积分: '+ res.result.grade;
+                self.battleLevel.string = '对战等级: '+ res.result.battle_level;
+                self.battleGrade.string = '对战积分: '+ res.result.battle_grade;
+            },
+            fail: console.error
+        })
+    },
+
+    getMockBaseInfo () {
         /**
          * mock
          */

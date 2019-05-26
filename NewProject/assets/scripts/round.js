@@ -18,7 +18,10 @@ cc.Class({
         roundIndicator: cc.PageViewIndicator,
         toggle: cc.ToggleContainer,
         difficulty: cc.Label,
-        category: cc.Label
+        diff: 3,
+        category: cc.Label,
+        allImages: [],
+        roundRecord: []
     },
 
     // LIFE-CYCLE CALLBACKS:
@@ -29,17 +32,22 @@ cc.Class({
     },
 
     start () {
-        this.getRoundRecord();
+        try{
+            this.getRoundRecord();
+        }catch(ex){
+            console.log(ex);
+        }
     },
 
     getRoundRecord(){
         this.category.string = Category.properties[require('global').gameCategory].name;
-        //1 得到个人闯关记录<--difficulty
-        //2 得到所有图片
+        //1 得到所有图片信息
+        this.getImages();
+        //2 得到个人闯关记录<--difficulty
+        this.getRoundRecord();
+
+
         this.rounds = [];
-        /**
-         * stub↓
-         */
         var imglen = 9;
         for(let i = 0; i < imglen; i++){
             let round = cc.instantiate(this.roundPrefab);
@@ -47,6 +55,7 @@ cc.Class({
             round.getComponent('roundImgAndStar').setImage("url");
             this.rounds.push(round);
         }
+
         let roundIndex = 0;
         for(let i = 0; i <= imglen/4; i++){
             let roundLayout = cc.instantiate(this.roundLayoutPrefab);
@@ -61,19 +70,44 @@ cc.Class({
             roundLayout.setPosition(-360,-640);
         }
         this.roundPageView.content.setPosition(360*imglen/4,0);
-        //this.roundIndicator.start();
-        /**
-         * stub↑
-         */
-        /* for(let i = 0; i < this.rounds.length; i++){
-            this.roundLayout.node.addChild(this.rounds[i]);
-        } 
-        this.roundLayout.updateLayout();
-        */
+        
+    },
+
+    getRoundRecord () {
+        var self = this;
+        wx.cloud.callFunction({
+            name: 'getRoundRecord',
+            data: {
+                id: require('global').userid,
+                difficulty: self.diff,
+                category: require('global').gameCategory.value,
+            },
+            success: function(res) {
+                console.log(res.result);
+                self.roundRecord.concat(res.result);
+            },
+            fail: console.error
+        })
+    },
+
+    getImages () {
+        var self = this;
+        wx.cloud.callFunction({
+            name: 'getAllImages',
+            data: {
+                category: require('global').gameCategory.value,
+            },
+            success: function(res) {
+                console.log(res.result);
+                self.allImages.concat(res.result);
+            },
+            fail: console.error
+        })
     },
     
     setDifficulty (event, customEventData) {
-        this.difficulty.string = "难度: "+ customEventData;
+        this.difficulty.string = "难度: "+ customEventData + " X " + customEventData;
+        this.diff = parseInt(customEventData);
     },
 
     clickBackBtn (event, customEventData) {

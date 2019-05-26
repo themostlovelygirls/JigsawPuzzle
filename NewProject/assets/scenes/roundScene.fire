@@ -41,8 +41,8 @@
     },
     "_scale": {
       "__type__": "cc.Vec3",
-      "x": 0.345576405092505,
-      "y": 0.345576405092505,
+      "x": 0.17430419921875,
+      "y": 0.17430419921875,
       "z": 1
     },
     "_quat": {
@@ -1132,7 +1132,7 @@
     "component": "",
     "_componentId": "f2b6byq0VxB7r7tW4ShaMML",
     "handler": "setDifficulty",
-    "customEventData": "3 X 3"
+    "customEventData": "3"
   },
   {
     "__type__": "cc.Node",
@@ -1463,7 +1463,7 @@
     "component": "",
     "_componentId": "f2b6byq0VxB7r7tW4ShaMML",
     "handler": "setDifficulty",
-    "customEventData": "4 X 4"
+    "customEventData": "4"
   },
   {
     "__type__": "cc.Node",
@@ -1794,7 +1794,7 @@
     "component": "",
     "_componentId": "f2b6byq0VxB7r7tW4ShaMML",
     "handler": "setDifficulty",
-    "customEventData": "5 X 5"
+    "customEventData": "5"
   },
   {
     "__type__": "cc.ToggleContainer",
@@ -2325,9 +2325,12 @@
     "difficulty": {
       "__id__": 40
     },
+    "diff": 3,
     "category": {
       "__id__": 42
     },
+    "allImages": [],
+    "roundRecord": [],
     "_id": "d22r5jrQtM0o5i3W7SViz8"
   }
 ]
