@@ -5,9 +5,10 @@ cc.Class({
 
     properties: {
         category: cc.Label,
-        blockPrefab: cc.Prefab,
+        imagePrefab: cc.Prefab,
         imagePageView: cc.PageView,
         imageLayoutPrefab: cc.Prefab,
+        allImages: [],
     },
 
     // LIFE-CYCLE CALLBACKS:
@@ -17,23 +18,98 @@ cc.Class({
     },
 
     start () {
-        this.getImages();
+        
+        this.getAllImages();
+        /* this.getImages(); */
+    },
+
+    getAllImages() {
+
+        this.category.string = Category.properties[require('global').gameCategory].name;
+        console.log(this.category.string);
+
+        console.log("getAllImages:");
+        let self = this;
+        wx.cloud.callFunction({
+            name: 'getAllImages',
+            data: {
+                category: Category.properties[require('global').gameCategory].value,
+            },
+            success: function(res) {
+                console.log(res.result);
+                self.allImages = res.result;
+                console.log(self.allImages);
+                console.log("----")
+                self.initAllImages(self);
+                self.getUnlock();
+            },
+            fail: console.error
+        })
+    },
+
+    initAllImages (self) {
+        console.log("init all images");
+
+        self.images = [];
+        let imglen = self.allImages.length;;
+        for(let i = 0; i < imglen; i++) {
+            let image = cc.instantiate(self.imagePrefab);
+            image.getComponent("imagePrefab").setImage(self.allImages[i].url);
+            this.images.push(image);
+        }
+
+        let imageIndex = 0;
+        for(let i = 0; i < (imglen-1) / 6; i++) {
+            let imageLayout = cc.instantiate(self.imageLayoutPrefab);
+            let count = 0;
+            while(imageIndex<this.images.length&&count<6){
+                imageLayout.addChild(self.images[imageIndex]);
+                count++;
+                imageIndex++;
+            }
+            //imageLayout.updateLayout();
+            self.imagePageView.addPage(imageLayout);
+            imageLayout.setPosition(-360,-640);
+            self.imagePageView.content.setPosition(360*Math.floor((imglen-1)/6),0);
+        }
+    },
+
+    getUnlock() {
+
+        let self = this;
+        wx.cloud.callFunction({
+            name: 'getUnlockedImages',
+            data: {
+                id: require('global').userid,
+                category: Category.properties[require('global').gameCategory].value,
+            },
+            success: function(res) {
+               let len = res.result.length;
+               for(let i = 0; i < len; i++){
+                self.images[i].getComponent('imagePrefab').fadeLock();
+            } 
+               
+            },
+            fail: console.error
+        })
     },
 
     getImages() {
         this.category.string = Category.properties[require('global').gameCategory].name;
-        cc.log(this.category.string);
+        console.log(this.category.string);
 
         this.blocks = [];
-        let imglen = 9;
+        let imglen = 12;
         for(let i = 0; i < imglen; i++) {
-            let block = cc.instantiate(this.blockPrefab);
-            block.getComponent("block").setImage("url");
+            let block = cc.instantiate(this.imagePrefab);
+            block.getComponent("imagePrefab").setImage("url");
             this.blocks.push(block);
         }
 
         let blockIndex = 0;
-        for(let i = 0; i < imglen / 6; i++) {
+        console.log(imglen / 6);
+        for(let i = 0; i < (imglen-1) / 6; i++) {
+            console.log("in loop");
             let imageLayout = cc.instantiate(this.imageLayoutPrefab);
             let count = 0;
             while(blockIndex<this.blocks.length&&count<=5){
@@ -44,7 +120,7 @@ cc.Class({
             //imageLayout.updateLayout();
             this.imagePageView.addPage(imageLayout);
             imageLayout.setPosition(-360,-640);
-            this.imagePageView.content.setPosition(360*imglen/6,0);
+            this.imagePageView.content.setPosition(360*Math.floor((imglen-1)/6),0);
         }
 
     },
