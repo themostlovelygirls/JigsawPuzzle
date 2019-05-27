@@ -1,4 +1,5 @@
 import * as gameLogic from './gameLogic';
+import * as globalStorage from './global'
 const MIN_LENGTH = 50;
 
 // game.js 实现gameScene的逻辑
@@ -14,14 +15,15 @@ cc.Class({
         toolNode: cc.Node,
         swapImg: cc.Sprite,
         swapLabel: cc.Label,
-        difficulty: 3,
-        toolNum: 2,
+        difficulty: globalStorage.difficulty,
+        toolNum: 10,
         gap: 50,
         blank_x: 0,
         blank_y: 0,
         preOption: null,
         map: null,
         usedTools: 0,
+        inSwapMode: false
     },
 
     // LIFE-CYCLE CALLBACKS:
@@ -31,8 +33,8 @@ cc.Class({
     // 动态加载图片
     // TODO: 配置代理，调用微信接口，获得图片
     loadImg: function(container,url){
-        cc.log("动态加载图片");
-        cc.log("url: "+url);
+        console.log("动态加载图片");
+        console.log("url: "+url);
         cc.loader.loadRes(url, function (err, texture) {
         //cc.loader.load(url, function (err, texture) {
             if (err) {
@@ -56,14 +58,13 @@ cc.Class({
         // 添加事件监听
         this.addEventHandler();
 
-        cc.log("toolNum: "+this.toolNum)
+        console.log("toolNum: "+this.toolNum)
         this.swapLabel.string = ": " + this.toolNum;
     },
     // 加载头像
     loadHead () {
         // TODO: 得到图片url
         let url = 'headImg';
-        //let url = 'http://game.people.com.cn/NMediaFile/2015/1029/MAIN201510290900000533552743089.jpg';
         let container = this.headImg.getComponent(cc.Sprite);//图片呈现位置
         this.loadImg(container, url);
     },
@@ -87,7 +88,7 @@ cc.Class({
         this.blocks = [];
 
         this.map = gameLogic.initMap(this.difficulty);
-        cc.log(this.map);
+        console.log(this.map);
         let size = (cc.winSize.width - (this.difficulty+1) * this.gap) / this.difficulty;
         let x = this.gap;
         let y = size * 2.5 + this.gap * 2;
@@ -138,6 +139,8 @@ cc.Class({
         this.bg.on(cc.Node.EventType.TOUCH_CANCEL, (event)=>{
             this.touchEnd(event);
         })
+
+
     },
     touchEnd(event) {
         this.endPoint = event.getLocation();
@@ -159,18 +162,15 @@ cc.Class({
                 }
             }
 
-            if(this.blank_x == this.difficulty-1 && this.blank_y == this.difficulty-1 && this.isFinished()) {
-                cc.log("has finished");
-            }
+            // if(this.blank_x == this.difficulty-1 && this.blank_y == this.difficulty-1 && this.isFinished()) {
+            //     console.log("has finished");
+            // }
     },
     moveRight() {
         if(this.blank_y > 0) {
             this.preOption = "right";
             this.swap(this.blank_x, this.blank_y, this.blank_x, this.blank_y-1);
             this.blank_y = this.blank_y - 1;
-            if(!this.isFinished()) {
-                cc.log(this.map);
-            }
         }
     },
     moveLeft() {
@@ -178,9 +178,6 @@ cc.Class({
             this.preOption = "left";
             this.swap(this.blank_x, this.blank_y, this.blank_x, this.blank_y+1);
             this.blank_y = this.blank_y + 1;
-            if(!this.isFinished()) {
-                cc.log(this.map);
-            }
         }
     },
     moveUp() {
@@ -188,9 +185,6 @@ cc.Class({
             this.preOption = "up";
             this.swap(this.blank_x, this.blank_y, this.blank_x+1, this.blank_y);
             this.blank_x = this.blank_x + 1;
-            if(!this.isFinished()) {
-                cc.log(this.map);
-            }
         }
     },
     moveDown() {
@@ -198,15 +192,12 @@ cc.Class({
             this.preOption = "down";
             this.swap(this.blank_x, this.blank_y, this.blank_x-1, this.blank_y);
             this.blank_x = this.blank_x - 1;
-            if(!this.isFinished()) {
-                cc.log(this.map);
-            }
         }
     },
     // 判断拼图是否拼好
     isFinished() {
         for(let i = 0 ; i < this.difficulty ; i++) {
-            for(let j = 0 ; i < this.difficulty ; j++) {
+            for(let j = 0 ; j < this.difficulty ; j++) {
                 if(this.map[i][j] != (i*this.difficulty+j+1)) {
                     return false;
                 }
@@ -216,12 +207,6 @@ cc.Class({
     },
     // 交换两格
     swap(x1, y1, x2, y2) {
-
-        //cc.log(this.map);
-
-        //cc.log("swap x1: "+x1+"  y1: "+y1+"  x2: "+x2+"  y2: "+y2);
-        //cc.log(this.map[x1][y1] + "  " + this.map[x2][y2]);
-
         let tmpId = this.map[x1][y1];
         this.map[x1][y1] = this.map[x2][y2];
         this.map[x2][y2] = tmpId;
@@ -236,24 +221,37 @@ cc.Class({
         this.blocks[x1][y1] = block2;
         this.blocks[x2][y2] = block1;
 
-        //cc.log(this.blocks);
+        if(this.isFinished()) {
+            // TODO:
+            console.log("is finished")
+        }
     },
     // TODO: 使用、购买道具
     useTool() {
         if(this.toolNum > 0) {
             if(this.usedTools < parseInt(this.difficulty * this.difficulty / 2)) {
-                cc.log("use tool")
+                console.log("use tool")
                 this.toolNum = this.toolNum - 1;
                 this.usedTools = this.usedTools + 1;
                 this.swapLabel.string = ": "+ this.toolNum;
+                
+                this.inSwapMode = true
             }else {
-                cc.log("can't use tool");
+                console.log("can't use tool");
             }
         }else {
             // TODO:
-            cc.log("buy tool");
+            console.log("buy tool");
         }
     },
+
+    // TODO: 点击返回按钮
+    clickReturn (event, customEventData) {
+        console.log("in click return")
+        this.node.runAction(cc.sequence(cc.fadeOut(0.5),cc.callFunc(function(){
+            cc.director.loadScene("mainScene");
+        })));
+    }
 
     // update (dt) {},
 });
