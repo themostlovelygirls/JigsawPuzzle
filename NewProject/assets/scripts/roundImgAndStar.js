@@ -20,6 +20,7 @@ cc.Class({
         difficulty: 3,
         locked: true,
         lockImg: cc.Sprite,
+        imageTexture: cc.Texture2D
     },
 
     // LIFE-CYCLE CALLBACKS:
@@ -67,8 +68,14 @@ cc.Class({
     },
     
     setOnlineImg (url, node) {
+        var self = this;
         cc.loader.load(url , function (err, texture) {
             node.spriteFrame = new cc.SpriteFrame(texture);
+            self.imageTexture = texture;
+
+            // console.log("self.imageTexture in roundImgAndStar: " + self.imageTexture)
+            // console.log("instance: " + typeof(self.imageTexture))
+
             //console.log(err);
         })
     },
@@ -103,6 +110,15 @@ cc.Class({
         if(!this.locked){
             require('global').index = this.index;
             require('global').difficulty = this.difficulty;
+
+            // console.log("this.imageTexture before set: " + this.imageTexture)
+            // console.log("type: " + typeof(this.imageTexture))
+
+            require('global').imageTexture = this.imageTexture;
+
+            // console.log("this.imageTexture after set: " + this.imageTexture)
+            // console.log("type: " + typeof(this.imageTexture))
+
             this.node.runAction(cc.sequence(cc.fadeOut(0.5),cc.callFunc(function(){
                 cc.director.loadScene("gameScene");
             })));

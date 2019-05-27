@@ -136,7 +136,7 @@ cc.Class({
         for(let i = 0; i < imglen; i++){
             let round = cc.instantiate(self.roundPrefab);
             //round.getComponent('roundImgAndStar').setStars(0);
-            round.getComponent('roundImgAndStar').setImage(this.allImages[i].url);
+            round.getComponent('roundImgAndStar').setImage(self.allImages[i].url);
             round.getComponent('roundImgAndStar').setIndex(self.allImages[i].index);
             self.rounds.push(round);
         }
