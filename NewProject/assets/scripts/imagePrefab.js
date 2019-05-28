@@ -7,6 +7,7 @@ cc.Class({
         imgName: "",
         des: "",
         url: "",
+        locked: true,
     },
 
     // LIFE-CYCLE CALLBACKS:
@@ -28,7 +29,6 @@ cc.Class({
         this.imgName = name;
 
         this.setOnlineImg(url, this.blockImage);
-        console.log("url:"+url);
     },
 
     setStaticImg (url, node) {
