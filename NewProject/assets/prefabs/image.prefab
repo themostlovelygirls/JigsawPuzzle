@@ -27,14 +27,14 @@
     "_level": 1,
     "_components": [
       {
-        "__id__": 12
+        "__id__": 13
       },
       {
-        "__id__": 13
+        "__id__": 14
       }
     ],
     "_prefab": {
-      "__id__": 14
+      "__id__": 15
     },
     "_opacity": 255,
     "_color": {
@@ -201,7 +201,7 @@
       }
     ],
     "_prefab": {
-      "__id__": 11
+      "__id__": 12
     },
     "_opacity": 0,
     "_color": {
@@ -388,7 +388,11 @@
     "_enabled": true,
     "duration": 0.1,
     "zoomScale": 1.2,
-    "clickEvents": [],
+    "clickEvents": [
+      {
+        "__id__": 11
+      }
+    ],
     "_N$interactable": true,
     "_N$enableAutoGrayEffect": false,
     "_N$transition": 2,
@@ -459,6 +463,16 @@
     "_id": ""
   },
   {
+    "__type__": "cc.ClickEvent",
+    "target": {
+      "__id__": 1
+    },
+    "component": "",
+    "_componentId": "954d23KdTpMpIIKcwiONqhC",
+    "handler": "clickBtn",
+    "customEventData": ""
+  },
+  {
     "__type__": "cc.PrefabInfo",
     "root": {
       "__id__": 1
@@ -504,11 +518,14 @@
     },
     "_enabled": true,
     "blockImage": {
-      "__id__": 12
+      "__id__": 13
     },
     "lockImg": {
       "__id__": 3
     },
+    "imgName": "",
+    "des": "",
+    "url": "",
     "_id": ""
   },
   {

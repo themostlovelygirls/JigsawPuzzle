@@ -5,7 +5,7 @@ cc.Class({
     properties: {
         imgName: cc.Label,
         image: cc.Sprite,
-
+        locked: true,
     },
 
     // LIFE-CYCLE CALLBACKS:
@@ -15,7 +15,16 @@ cc.Class({
     },
 
     start () {
+        this.imageInfo = require('global').image;
+        console.log(this.imageInfo);
+        this.setOnlineImg(this.imageInfo.url, this.image)
+        this.imgName.string = this.imageInfo.imgName;
+    },
 
+    setOnlineImg (url, node) {
+        cc.loader.load(url , function (err, texture) {
+            node.spriteFrame = new cc.SpriteFrame(texture);
+        })
     },
 
     clickBackBtn (event, customEventData) {

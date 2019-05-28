@@ -4,6 +4,9 @@ cc.Class({
     properties: {
         blockImage: cc.Sprite,
         lockImg: cc.Sprite,
+        imgName: "",
+        des: "",
+        url: "",
     },
 
     // LIFE-CYCLE CALLBACKS:
@@ -14,8 +17,16 @@ cc.Class({
 
     },
 
-    setImage (url) {
-       /*  this.setStaticImg("headImg",this.blockImage); */
+    setLockBool (lockbool){
+        this.locked = lockbool;
+    },
+
+    setImage (url, des, name) {
+
+        this.url = url;
+        this.des = des;
+        this.imgName = name;
+
         this.setOnlineImg(url, this.blockImage);
         console.log("url:"+url);
     },
@@ -43,6 +54,21 @@ cc.Class({
                     node.opacity = e;
                 }, 200);
             })(j);
+        }
+    },
+
+    clickBtn() {
+        if(!this.locked) {
+            let image = {
+                des: this.des,
+                url: this.url,
+                imgName: this.imgName,
+            }
+            require('global').image = image;
+
+            this.node.runAction(cc.sequence(cc.fadeOut(0.5),cc.callFunc(function(){
+                cc.director.loadScene("desScene");
+            })));
         }
     },
 

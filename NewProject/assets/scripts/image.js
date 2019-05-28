@@ -54,7 +54,7 @@ cc.Class({
         let imglen = self.allImages.length;;
         for(let i = 0; i < imglen; i++) {
             let image = cc.instantiate(self.imagePrefab);
-            image.getComponent("imagePrefab").setImage(self.allImages[i].url);
+            image.getComponent("imagePrefab").setImage(self.allImages[i].url,self.allImages[i].description,self.allImages[i].name);
             this.images.push(image);
         }
 
@@ -87,6 +87,7 @@ cc.Class({
                let len = res.result.length;
                for(let i = 0; i < len; i++){
                 self.images[i].getComponent('imagePrefab').fadeLock();
+                self.images[i].getComponent('imagePrefab').setLockBool(false);
             } 
                
             },
