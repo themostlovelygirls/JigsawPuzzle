@@ -41,8 +41,8 @@
     },
     "_scale": {
       "__type__": "cc.Vec3",
-      "x": 0.17444663047790526,
-      "y": 0.17444663047790526,
+      "x": 0.1743896484375,
+      "y": 0.1743896484375,
       "z": 1
     },
     "_quat": {
@@ -772,7 +772,7 @@
     },
     "_enabled": true,
     "_spriteFrame": {
-      "__uuid__": "7ba5674b-6461-42d4-9a63-a10dc5f24936"
+      "__uuid__": "8e4a01a9-8d29-48cd-bd1f-d689a70c2e4f"
     },
     "_type": 0,
     "_sizeMode": 0,
@@ -1334,7 +1334,6 @@
     "preOption": null,
     "map": null,
     "usedTools": 0,
-    "inSwapMode": false,
     "lastTime": 0,
     "timer": null,
     "_id": "16TGkt2CRNuK0ej5jU0Wqu"
