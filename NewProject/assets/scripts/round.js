@@ -99,7 +99,7 @@ cc.Class({
             for(let j = 0; j < this.rounds.length; j++){
                 let round = this.rounds[j];
                 if (index == round.getComponent('roundImgAndStar').getIndex()){
-                    round.getComponent('roundImgAndStar').setStars(this.roundRecord[i].completition);
+                    round.getComponent('roundImgAndStar').setStars(this.roundRecord[i].completion);
                     round.getComponent('roundImgAndStar').setDifficulty(this.roundRecord[i].difficulty);
                     round.getComponent('roundImgAndStar').fadeLock();
                     round.getComponent('roundImgAndStar').setLockBool(false);
