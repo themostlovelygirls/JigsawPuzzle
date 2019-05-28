@@ -15,7 +15,9 @@ cc.Class({
 
     // LIFE-CYCLE CALLBACKS:
 
-    // onLoad () {},
+    onLoad () {
+        this.node.runAction(cc.fadeIn(0.5));
+    },
 
     start() {
         try{

@@ -5,6 +5,7 @@ module.exports = {
     gameCategory: Category.ITERATURE,    //用户选择的游戏类别
     index: 1,
     difficulty: 3,
-    imageTexture: cc.Texture2D
+    imageTexture: cc.Texture2D,
+    image: null,
 
 };
