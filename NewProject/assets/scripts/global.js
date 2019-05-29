@@ -7,5 +7,7 @@ module.exports = {
     difficulty: 3,
     imageTexture: cc.Texture2D,
     image: null,
+    avatarUrl: "",
+    username: "",
 
 };

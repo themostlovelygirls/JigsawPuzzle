@@ -33,16 +33,12 @@ cc.Class({
 
     start () {
         try{
-            wx.cloud.init();
-            try{
-                this.getWeChatBaseInfo();
-            }catch(e){
-                this.getMockBaseInfo();
-                console.log(e);
-            }
-        }catch(ex){
-            console.log(ex);
+            this.getWeChatBaseInfo();
+        }catch(e){
+            this.getMockBaseInfo();
+            console.log(e);
         }
+        
     },
     
 
