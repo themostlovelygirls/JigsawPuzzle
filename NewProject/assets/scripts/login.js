@@ -70,7 +70,7 @@ cc.Class({
               exportJson.userInfo = res.userInfo;
               //此时可进行登录操作
               let username = res.userInfo.nickName;
-              let avatarUrl = res.userInfo.avatarUrl
+              let avatarUrl = res.userInfo.avatarUrl;
               self.login(username, avatarUrl,self);
               button.destroy();
             } else {
@@ -100,7 +100,7 @@ cc.Class({
               console.log(res.result);
               require('global').userid = res.result.openid;
               require('global').username = username;
-              require('global').avatarUrl = avatarUrl;
+              require('global').avatarUrl = (avatarUrl + "?aaa=aa.jpg");
 
               /* console.log(this); */
 

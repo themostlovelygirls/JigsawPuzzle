@@ -12,7 +12,7 @@ cc.Class({
     extends: cc.Component,
 
     properties: {
-        userUrl: cc.Node,
+        userUrl: cc.Sprite,
         level: cc.Label,
         grade: cc.Label,
         battleLevel: cc.Label,
@@ -51,12 +51,20 @@ cc.Class({
             },
             success: function(res) {
                 console.log(res.result);
+                self.setOnlineImg(require('global').avatarUrl, self.userUrl);
+                console.log("avatar: "+require('global').avatarUrl);
                 self.level.string = '等级: '+ res.result.level;
                 self.grade.string = '积分: '+ res.result.grade;
                 self.battleLevel.string = '对战等级: '+ res.result.battle_level;
                 self.battleGrade.string = '对战积分: '+ res.result.battle_grade;
             },
             fail: console.error
+        })
+    },
+
+    setOnlineImg (url, node) {
+        cc.loader.load(url , function (err, texture) {
+            node.spriteFrame = new cc.SpriteFrame(texture);
         })
     },
 
