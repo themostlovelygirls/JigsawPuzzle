@@ -8,6 +8,8 @@ cc.Class({
         locked: true,
         des: cc.Label,
         count: 0,
+        border: cc.Sprite,
+        imgContent: cc.Sprite,
     },
 
     // LIFE-CYCLE CALLBACKS:
@@ -18,9 +20,9 @@ cc.Class({
 
     start () {
         this.imageInfo = require('global').image;
-        console.log(this.imageInfo);
-        this.des.string = "京剧，曾称平剧，中国五大戏曲剧种之一，场景布置注重写意，腔调以西皮、二黄为主，用胡琴和锣鼓等伴奏，被视为中国国粹，中国戏曲三鼎甲“榜首”。\n\n京剧表演的四种艺术手法:唱、念、做、打，也是京剧表演四项基本功。唱指歌唱，念指具有音乐性的念白，二者相辅相成，构成歌舞化的京剧表演艺术两大要素之一的“歌”，做指舞蹈化的形体动作，打指武打和翻跌的技艺，二者相互结合，构成歌舞化的京剧表演艺术两大要素之一的“舞”。";
-        this.setOnlineImg(this.imageInfo.url, this.image)
+        /* console.log(this.imageInfo); */
+        this.des.string = this.imageInfo.des;
+        this.setOnlineImg(this.imageInfo.url, this.imgContent)
         this.imgName.string = this.imageInfo.imgName;
     },
 
@@ -47,13 +49,17 @@ cc.Class({
         if(self.count % 2 == 0) {
             self.image.node.scaleX = 1;
             self.des.node.opacity = 0;
+            self.border.node.active = true;
+            self.imgContent.node.active = true;
             cc.loader.load(self.imageInfo.url , function (err, texture) {
-                self.image.spriteFrame = new cc.SpriteFrame(texture);
+                self.imgContent.spriteFrame = new cc.SpriteFrame(texture);
             })
         }else {
-            let url = "blank";
+            let url = "description";
             self.image.node.scaleX = -1;
             self.des.node.opacity = 255;
+            self.border.node.active = false;
+            self.imgContent.node.active = false;
 
             cc.loader.loadRes(url, cc.SpriteFrame, function (err, spriteFrame) {
                 self.image.spriteFrame = spriteFrame;
@@ -67,6 +73,13 @@ cc.Class({
             node.spriteFrame = new cc.SpriteFrame(texture);
         })
     },
+
+    /* setStaticImg (node) {
+        //let url = 
+        cc.loader.loadRes(url, cc.SpriteFrame, function (err, spriteFrame) {
+            node.spriteFrame = spriteFrame;
+        });
+    }, */
 
     clickBackBtn (event, customEventData) {
 

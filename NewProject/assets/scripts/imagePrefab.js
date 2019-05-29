@@ -7,6 +7,7 @@ cc.Class({
         imgName: "",
         des: "",
         url: "",
+        /* locked: true, */
     },
 
     // LIFE-CYCLE CALLBACKS:
