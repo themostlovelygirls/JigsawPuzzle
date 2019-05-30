@@ -28,7 +28,7 @@ cc.Class({
 
     onLoad () {
         this.node.opacity = 0;
-        this.node.runAction(cc.fadeIn(1));
+        
     },
 
     start () {
@@ -109,6 +109,13 @@ cc.Class({
         }
     },
 
+    sleep(delay) {
+        var start = (new Date()).getTime();
+        while ((new Date()).getTime() - start < delay) {
+          continue;
+        }
+    },
+
     getAllImages () {
         console.log("getAllImages:");
         var self = this;
@@ -123,6 +130,7 @@ cc.Class({
                 console.log(self.allImages);
                 console.log("----")
                 self.initAllImages(self);
+                self.node.runAction(cc.fadeIn(3));
                 self.getRecord();
             },
             fail: console.error

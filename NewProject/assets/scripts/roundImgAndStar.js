@@ -86,13 +86,14 @@ cc.Class({
     },
 
     fadeOut (node) {
-        for(let j = 255; j >=0; j-=0.01){
+        /* for(let j = 255; j >=0; j-=0.01){
             (function(e){
                 setTimeout(function(){
                     node.opacity = e;
-                }, 600);
+                }, 700);
             })(j);
-        }
+        } */
+        node.opacity = 0;
     },
 
 

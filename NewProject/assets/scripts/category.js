@@ -32,7 +32,7 @@ cc.Class({
 
     onLoad () {
         this.node.opacity = 0;
-        this.node.runAction(cc.fadeIn(0.5));
+        
     },
 
     start () {
@@ -57,6 +57,7 @@ cc.Class({
                     self.categories.push(parseInt(res.result[i]));
                 }
                 self.lockCategory();
+                self.node.runAction(cc.fadeIn(0.5));
             },
             fail: console.error
         })
@@ -169,12 +170,6 @@ cc.Class({
 
      }, */
     fadeNode (node){
-        for(let j = 255; j >=0; j-=0.01){
-            (function(e){
-                setTimeout(function(){
-                    node.opacity = e;
-                }, 700);
-            })(j);
-        }
+        node.opacity = 0;
     }
 });
