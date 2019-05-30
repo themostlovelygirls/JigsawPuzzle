@@ -41,8 +41,8 @@
     },
     "_scale": {
       "__type__": "cc.Vec3",
-      "x": 0.37787998207905615,
-      "y": 0.37787998207905615,
+      "x": 0.38297119140625,
+      "y": 0.38297119140625,
       "z": 1
     },
     "_quat": {
@@ -1019,7 +1019,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 187.85,
+      "width": 180,
       "height": 40
     },
     "_anchorPoint": {
@@ -1073,7 +1073,7 @@
     "_batchAsBitmap": false,
     "_N$horizontalAlign": 1,
     "_N$verticalAlign": 1,
-    "_N$fontFamily": "Arial",
+    "_N$fontFamily": "楷体",
     "_N$overflow": 0,
     "_N$cacheMode": 0,
     "_id": "088CjQyzxLLYby+8xMtdeH"
@@ -1936,6 +1936,8 @@
     "leftToolLabel": {
       "__id__": 38
     },
+    "leftStar": 0,
+    "leftTool": 0,
     "_id": "57yUKwDXdARb3iB94S5rXT"
   }
 ]

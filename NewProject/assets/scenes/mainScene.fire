@@ -2272,7 +2272,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 93.35,
+      "width": 105,
       "height": 40
     },
     "_anchorPoint": {
@@ -2326,7 +2326,7 @@
     "_batchAsBitmap": false,
     "_N$horizontalAlign": 1,
     "_N$verticalAlign": 1,
-    "_N$fontFamily": "Arial",
+    "_N$fontFamily": "楷体",
     "_N$overflow": 0,
     "_N$cacheMode": 0,
     "_id": "e7AuymMCZBfL4EN5iyJ9ld"
@@ -2357,7 +2357,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 93.35,
+      "width": 105,
       "height": 40
     },
     "_anchorPoint": {
@@ -2411,7 +2411,7 @@
     "_batchAsBitmap": false,
     "_N$horizontalAlign": 1,
     "_N$verticalAlign": 1,
-    "_N$fontFamily": "Arial",
+    "_N$fontFamily": "楷体",
     "_N$overflow": 0,
     "_N$cacheMode": 0,
     "_id": "8c/NJgN1BABYrdWDOKhghN"
@@ -2442,7 +2442,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 153.35,
+      "width": 165,
       "height": 40
     },
     "_anchorPoint": {
@@ -2496,7 +2496,7 @@
     "_batchAsBitmap": false,
     "_N$horizontalAlign": 1,
     "_N$verticalAlign": 1,
-    "_N$fontFamily": "Arial",
+    "_N$fontFamily": "楷体",
     "_N$overflow": 0,
     "_N$cacheMode": 0,
     "_id": "faeT0iTiNP5rRVKm82mNZj"
@@ -2527,7 +2527,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 153.35,
+      "width": 165,
       "height": 40
     },
     "_anchorPoint": {
@@ -2581,7 +2581,7 @@
     "_batchAsBitmap": false,
     "_N$horizontalAlign": 1,
     "_N$verticalAlign": 1,
-    "_N$fontFamily": "Arial",
+    "_N$fontFamily": "楷体",
     "_N$overflow": 0,
     "_N$cacheMode": 0,
     "_id": "8cZU7w69tPybiFuFkLgtm+"
