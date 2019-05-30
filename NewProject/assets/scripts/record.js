@@ -25,7 +25,15 @@ cc.Class({
             /* record.setPosition(-300, 100 - i * 250); */
             /* this.recordScrollView.node.addChild(record); */
         }
+    },
+
+    clickBackBtn (event, customEventData) {
+
+        this.node.runAction(cc.sequence(cc.fadeOut(0.5),cc.callFunc(function(){
+            cc.director.loadScene("mainScene");
+        })));
     }
+
 
     // update (dt) {},
 });

@@ -49,13 +49,15 @@ cc.Class({
     },
 
     fadeOut (node) {
-        for(let j = 210; j >=0; j-=0.01){
+        /* for(let j = 210; j >=0; j-=0.01){
             (function(e){
                 setTimeout(function(){
                     node.opacity = e;
                 }, 200);
             })(j);
-        }
+        } */
+
+        node.opacity = 0;
     },
 
     clickBtn() {

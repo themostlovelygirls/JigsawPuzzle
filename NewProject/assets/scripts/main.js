@@ -104,5 +104,12 @@ cc.Class({
         this.node.runAction(cc.sequence(cc.fadeOut(0.5),cc.callFunc(function(){
             cc.director.loadScene("helpScene");
         })));
+    },
+
+    clickRecordBtn (event, customEventData) {
+        this.node.runAction(cc.sequence(cc.fadeOut(0.5),cc.callFunc(function(){
+            cc.director.loadScene("recordScene");
+        })));
     }
+
 });
