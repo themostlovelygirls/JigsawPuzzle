@@ -52,7 +52,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 630,
+      "width": 650,
       "height": 200
     },
     "_anchorPoint": {
@@ -62,7 +62,7 @@
     },
     "_position": {
       "__type__": "cc.Vec3",
-      "x": -307,
+      "x": -320,
       "y": -514,
       "z": 0
     },
@@ -124,7 +124,7 @@
     },
     "_position": {
       "__type__": "cc.Vec3",
-      "x": 0,
+      "x": 10,
       "y": 120,
       "z": 0
     },
@@ -223,7 +223,7 @@
     "_position": {
       "__type__": "cc.Vec3",
       "x": 500,
-      "y": 100,
+      "y": 110,
       "z": 0
     },
     "_scale": {
@@ -324,7 +324,7 @@
     "_position": {
       "__type__": "cc.Vec3",
       "x": 500,
-      "y": 120,
+      "y": 110,
       "z": 0
     },
     "_scale": {
@@ -424,7 +424,7 @@
     },
     "_position": {
       "__type__": "cc.Vec3",
-      "x": 10,
+      "x": 20,
       "y": 20,
       "z": 0
     },
@@ -492,7 +492,9 @@
       "__id__": 1
     },
     "_enabled": true,
-    "_spriteFrame": null,
+    "_spriteFrame": {
+      "__uuid__": "33ab049f-7d16-4763-a8e1-70d31ec1efa1"
+    },
     "_type": 0,
     "_sizeMode": 0,
     "_fillType": 0,
@@ -524,7 +526,12 @@
     "date": {
       "__id__": 12
     },
-    "win": true,
+    "winImg": {
+      "__id__": 6
+    },
+    "failImg": {
+      "__id__": 9
+    },
     "_id": ""
   },
   {
