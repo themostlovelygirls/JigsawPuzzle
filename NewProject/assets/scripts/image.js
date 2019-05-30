@@ -14,6 +14,7 @@ cc.Class({
     // LIFE-CYCLE CALLBACKS:
 
     onLoad () {
+        this.node.opacity = 0;
         this.node.runAction(cc.fadeIn(0.5));
     },
 
