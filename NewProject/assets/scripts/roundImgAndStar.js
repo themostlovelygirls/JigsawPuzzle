@@ -90,7 +90,7 @@ cc.Class({
             (function(e){
                 setTimeout(function(){
                     node.opacity = e;
-                }, 400);
+                }, 600);
             })(j);
         }
     },

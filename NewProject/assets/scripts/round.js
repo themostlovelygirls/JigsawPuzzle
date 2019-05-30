@@ -28,7 +28,7 @@ cc.Class({
 
     onLoad () {
         this.node.opacity = 0;
-        this.node.runAction(cc.fadeIn(3));
+        this.node.runAction(cc.fadeIn(1));
     },
 
     start () {

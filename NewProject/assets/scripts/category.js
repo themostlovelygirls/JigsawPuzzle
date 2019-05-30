@@ -173,7 +173,7 @@ cc.Class({
             (function(e){
                 setTimeout(function(){
                     node.opacity = e;
-                }, 500);
+                }, 700);
             })(j);
         }
     }
