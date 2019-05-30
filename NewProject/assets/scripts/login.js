@@ -39,7 +39,7 @@ cc.Class({
           console.log("用户已授权");
           window.wx.getUserInfo({
             success(res) {
-              console.log(res);
+              /* console.log(res); */
               exportJson.userInfo = res.userInfo;
               //此时可进行登录操作
               let username = res.userInfo.nickName;
@@ -97,12 +97,10 @@ cc.Class({
               jscode: res.code,
             },
             success: function (res) {
-              console.log(res.result);
+              /* console.log(res.result); */
               require('global').userid = res.result.openid;
               require('global').username = username;
               require('global').avatarUrl = (avatarUrl + "?aaa=aa.jpg");
-
-              /* console.log(this); */
 
               self.node.runAction(cc.sequence(cc.fadeOut(0.5),cc.callFunc(function(){
                 cc.director.loadScene("mainScene");
