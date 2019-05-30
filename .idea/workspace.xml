@@ -1,0 +1,439 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="5f718c57-6b81-479c-97ba-5ac04efd42f8" name="Default" comment="增加云函数login的接口描述">
+      <change beforePath="$PROJECT_DIR$/NewProject/assets/picture/1.jpg.meta" afterPath="$PROJECT_DIR$/NewProject/assets/picture/1.jpg.meta" />
+      <change beforePath="$PROJECT_DIR$/NewProject/assets/picture/2.jpg.meta" afterPath="$PROJECT_DIR$/NewProject/assets/picture/2.jpg.meta" />
+      <change beforePath="$PROJECT_DIR$/NewProject/assets/picture/3.jpg.meta" afterPath="$PROJECT_DIR$/NewProject/assets/picture/3.jpg.meta" />
+      <change beforePath="$PROJECT_DIR$/NewProject/assets/picture/4.jpg.meta" afterPath="$PROJECT_DIR$/NewProject/assets/picture/4.jpg.meta" />
+      <change beforePath="$PROJECT_DIR$/NewProject/assets/picture/5.jpg.meta" afterPath="$PROJECT_DIR$/NewProject/assets/picture/5.jpg.meta" />
+      <change beforePath="$PROJECT_DIR$/NewProject/assets/picture/6.jpg.meta" afterPath="$PROJECT_DIR$/NewProject/assets/picture/6.jpg.meta" />
+      <change beforePath="$PROJECT_DIR$/NewProject/assets/picture/album.png.meta" afterPath="$PROJECT_DIR$/NewProject/assets/picture/album.png.meta" />
+      <change beforePath="$PROJECT_DIR$/NewProject/assets/picture/button.png.meta" afterPath="$PROJECT_DIR$/NewProject/assets/picture/button.png.meta" />
+      <change beforePath="$PROJECT_DIR$/NewProject/assets/picture/cover.jpg.meta" afterPath="$PROJECT_DIR$/NewProject/assets/picture/cover.jpg.meta" />
+      <change beforePath="$PROJECT_DIR$/NewProject/assets/picture/cover2.jpg.meta" afterPath="$PROJECT_DIR$/NewProject/assets/picture/cover2.jpg.meta" />
+      <change beforePath="$PROJECT_DIR$/NewProject/assets/picture/cover3.jpg.meta" afterPath="$PROJECT_DIR$/NewProject/assets/picture/cover3.jpg.meta" />
+      <change beforePath="$PROJECT_DIR$/NewProject/assets/picture/decorate1.png.meta" afterPath="$PROJECT_DIR$/NewProject/assets/picture/decorate1.png.meta" />
+      <change beforePath="$PROJECT_DIR$/NewProject/assets/picture/decorate2.png.meta" afterPath="$PROJECT_DIR$/NewProject/assets/picture/decorate2.png.meta" />
+      <change beforePath="$PROJECT_DIR$/NewProject/assets/picture/help.png.meta" afterPath="$PROJECT_DIR$/NewProject/assets/picture/help.png.meta" />
+      <change beforePath="$PROJECT_DIR$/NewProject/assets/picture/record.png.meta" afterPath="$PROJECT_DIR$/NewProject/assets/picture/record.png.meta" />
+      <change beforePath="$PROJECT_DIR$/NewProject/assets/picture/return.png.meta" afterPath="$PROJECT_DIR$/NewProject/assets/picture/return.png.meta" />
+      <change beforePath="$PROJECT_DIR$/NewProject/assets/picture/shop.png.meta" afterPath="$PROJECT_DIR$/NewProject/assets/picture/shop.png.meta" />
+      <change beforePath="$PROJECT_DIR$/NewProject/assets/prefabs/cover.prefab.meta" afterPath="$PROJECT_DIR$/NewProject/assets/prefabs/cover.prefab.meta" />
+      <change beforePath="$PROJECT_DIR$/NewProject/assets/prefabs/image.prefab.meta" afterPath="$PROJECT_DIR$/NewProject/assets/prefabs/image.prefab.meta" />
+      <change beforePath="$PROJECT_DIR$/NewProject/assets/prefabs/imageLayout.prefab.meta" afterPath="$PROJECT_DIR$/NewProject/assets/prefabs/imageLayout.prefab.meta" />
+      <change beforePath="$PROJECT_DIR$/NewProject/assets/prefabs/round.prefab.meta" afterPath="$PROJECT_DIR$/NewProject/assets/prefabs/round.prefab.meta" />
+      <change beforePath="$PROJECT_DIR$/NewProject/assets/prefabs/roundLayout.prefab.meta" afterPath="$PROJECT_DIR$/NewProject/assets/prefabs/roundLayout.prefab.meta" />
+      <change beforePath="$PROJECT_DIR$/NewProject/assets/resources/1.png.meta" afterPath="$PROJECT_DIR$/NewProject/assets/resources/1.png.meta" />
+      <change beforePath="$PROJECT_DIR$/NewProject/assets/resources/description.png.meta" afterPath="$PROJECT_DIR$/NewProject/assets/resources/description.png.meta" />
+      <change beforePath="$PROJECT_DIR$/NewProject/assets/resources/fail.png.meta" afterPath="$PROJECT_DIR$/NewProject/assets/resources/fail.png.meta" />
+      <change beforePath="$PROJECT_DIR$/NewProject/assets/resources/frame3.png.meta" afterPath="$PROJECT_DIR$/NewProject/assets/resources/frame3.png.meta" />
+      <change beforePath="$PROJECT_DIR$/NewProject/assets/resources/lock.png.meta" afterPath="$PROJECT_DIR$/NewProject/assets/resources/lock.png.meta" />
+      <change beforePath="$PROJECT_DIR$/NewProject/assets/resources/lockRect.png.meta" afterPath="$PROJECT_DIR$/NewProject/assets/resources/lockRect.png.meta" />
+      <change beforePath="$PROJECT_DIR$/NewProject/assets/resources/star.png.meta" afterPath="$PROJECT_DIR$/NewProject/assets/resources/star.png.meta" />
+      <change beforePath="$PROJECT_DIR$/NewProject/assets/resources/starEmpty.png.meta" afterPath="$PROJECT_DIR$/NewProject/assets/resources/starEmpty.png.meta" />
+      <change beforePath="$PROJECT_DIR$/NewProject/assets/resources/win.png.meta" afterPath="$PROJECT_DIR$/NewProject/assets/resources/win.png.meta" />
+      <change beforePath="$PROJECT_DIR$/NewProject/assets/scenes/albumScene.fire.meta" afterPath="$PROJECT_DIR$/NewProject/assets/scenes/albumScene.fire.meta" />
+      <change beforePath="$PROJECT_DIR$/NewProject/assets/scenes/categoryScene.fire.meta" afterPath="$PROJECT_DIR$/NewProject/assets/scenes/categoryScene.fire.meta" />
+      <change beforePath="$PROJECT_DIR$/NewProject/assets/scenes/desScene.fire.meta" afterPath="$PROJECT_DIR$/NewProject/assets/scenes/desScene.fire.meta" />
+      <change beforePath="$PROJECT_DIR$/NewProject/assets/scenes/helpScene.fire.meta" afterPath="$PROJECT_DIR$/NewProject/assets/scenes/helpScene.fire.meta" />
+      <change beforePath="$PROJECT_DIR$/NewProject/assets/scenes/imageScene.fire.meta" afterPath="$PROJECT_DIR$/NewProject/assets/scenes/imageScene.fire.meta" />
+      <change beforePath="$PROJECT_DIR$/NewProject/assets/scenes/loginScene.fire.meta" afterPath="$PROJECT_DIR$/NewProject/assets/scenes/loginScene.fire.meta" />
+      <change beforePath="$PROJECT_DIR$/NewProject/assets/scenes/recordScene.fire.meta" afterPath="$PROJECT_DIR$/NewProject/assets/scenes/recordScene.fire.meta" />
+      <change beforePath="$PROJECT_DIR$/NewProject/assets/scenes/roundScene.fire.meta" afterPath="$PROJECT_DIR$/NewProject/assets/scenes/roundScene.fire.meta" />
+      <change beforePath="$PROJECT_DIR$/NewProject/assets/scenes/shopScene.fire.meta" afterPath="$PROJECT_DIR$/NewProject/assets/scenes/shopScene.fire.meta" />
+      <change beforePath="$PROJECT_DIR$/NewProject/assets/scripts/album.js.meta" afterPath="$PROJECT_DIR$/NewProject/assets/scripts/album.js.meta" />
+      <change beforePath="$PROJECT_DIR$/NewProject/assets/scripts/block.js" afterPath="$PROJECT_DIR$/NewProject/assets/scripts/block.js" />
+      <change beforePath="$PROJECT_DIR$/NewProject/assets/scripts/category.js.meta" afterPath="$PROJECT_DIR$/NewProject/assets/scripts/category.js.meta" />
+      <change beforePath="$PROJECT_DIR$/NewProject/assets/scripts/categoryEnum.js.meta" afterPath="$PROJECT_DIR$/NewProject/assets/scripts/categoryEnum.js.meta" />
+      <change beforePath="$PROJECT_DIR$/NewProject/assets/scripts/cutImage.js.meta" afterPath="$PROJECT_DIR$/NewProject/assets/scripts/cutImage.js.meta" />
+      <change beforePath="$PROJECT_DIR$/NewProject/assets/scripts/description.js.meta" afterPath="$PROJECT_DIR$/NewProject/assets/scripts/description.js.meta" />
+      <change beforePath="$PROJECT_DIR$/NewProject/assets/scripts/gameScene.js" afterPath="$PROJECT_DIR$/NewProject/assets/scripts/gameScene.js" />
+      <change beforePath="$PROJECT_DIR$/NewProject/assets/scripts/global.js.meta" afterPath="$PROJECT_DIR$/NewProject/assets/scripts/global.js.meta" />
+      <change beforePath="$PROJECT_DIR$/NewProject/assets/scripts/image.js.meta" afterPath="$PROJECT_DIR$/NewProject/assets/scripts/image.js.meta" />
+      <change beforePath="$PROJECT_DIR$/NewProject/assets/scripts/imagePrefab.js.meta" afterPath="$PROJECT_DIR$/NewProject/assets/scripts/imagePrefab.js.meta" />
+      <change beforePath="$PROJECT_DIR$/NewProject/assets/scripts/login.js.meta" afterPath="$PROJECT_DIR$/NewProject/assets/scripts/login.js.meta" />
+      <change beforePath="$PROJECT_DIR$/NewProject/assets/scripts/main.js.meta" afterPath="$PROJECT_DIR$/NewProject/assets/scripts/main.js.meta" />
+      <change beforePath="$PROJECT_DIR$/NewProject/assets/scripts/round.js.meta" afterPath="$PROJECT_DIR$/NewProject/assets/scripts/round.js.meta" />
+      <change beforePath="$PROJECT_DIR$/NewProject/assets/scripts/roundImgAndStar.js.meta" afterPath="$PROJECT_DIR$/NewProject/assets/scripts/roundImgAndStar.js.meta" />
+      <change beforePath="$PROJECT_DIR$/NewProject/settings/builder.json" afterPath="$PROJECT_DIR$/NewProject/settings/builder.json" />
+      <change beforePath="$PROJECT_DIR$/NewProject/settings/project.json" afterPath="$PROJECT_DIR$/NewProject/settings/project.json" />
+    </list>
+    <ignored path="$PROJECT_DIR$/out/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GradleLocalSettings">
+    <option name="externalProjectsViewState">
+      <projects_view />
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-11" />
+    <option name="y" value="-11" />
+    <option name="width" value="1934" />
+    <option name="height" value="1042" />
+  </component>
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scratches" />
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="JigsawPuzzle" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JigsawPuzzle" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="settings.editor.selected.configurable" value="preferences.applicationServers" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="ChangesBrowser.SHOW_FLATTEN" value="false" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <module />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file id="idea.log" enabled="true" />
+    </configuration>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5f718c57-6b81-479c-97ba-5ac04efd42f8" name="Default" comment="" />
+      <created>1557816748312</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1557816748312</updated>
+      <workItem from="1557816750077" duration="596000" />
+      <workItem from="1557880390429" duration="19000" />
+      <workItem from="1557899697680" duration="540000" />
+      <workItem from="1557903198019" duration="350000" />
+      <workItem from="1557903671762" duration="161000" />
+      <workItem from="1557973592354" duration="143000" />
+      <workItem from="1558160555432" duration="200000" />
+      <workItem from="1558162205957" duration="102000" />
+      <workItem from="1558578126989" duration="83000" />
+      <workItem from="1558580463496" duration="666000" />
+      <workItem from="1558596428290" duration="232000" />
+      <workItem from="1558795005588" duration="226000" />
+      <workItem from="1558854616294" duration="195000" />
+      <workItem from="1558885316042" duration="650000" />
+      <workItem from="1558939949142" duration="155000" />
+      <workItem from="1558944166288" duration="416000" />
+      <workItem from="1558964932515" duration="379000" />
+      <workItem from="1558971449127" duration="313000" />
+      <workItem from="1559008207469" duration="599000" />
+      <workItem from="1559050095820" duration="3583000" />
+      <workItem from="1559056693085" duration="359000" />
+      <workItem from="1559089153734" duration="502000" />
+      <workItem from="1559091859772" duration="280000" />
+      <workItem from="1559093665533" duration="125000" />
+      <workItem from="1559178145229" duration="1065000" />
+      <workItem from="1559184841248" duration="56000" />
+      <workItem from="1559204032618" duration="60000" />
+    </task>
+    <task id="LOCAL-00001" summary="game的部分代码">
+      <created>1557903364106</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1557903364106</updated>
+    </task>
+    <task id="LOCAL-00002" summary="game的部分代码">
+      <created>1557903764729</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1557903764729</updated>
+    </task>
+    <task id="LOCAL-00003" summary="game的部分代码：初始地图的生成、拼图移动、使用道具（部分）、判断是否结束">
+      <created>1557973711679</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1557973711679</updated>
+    </task>
+    <task id="LOCAL-00004" summary="完成DAO的部分接口">
+      <created>1558596496143</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1558596496143</updated>
+    </task>
+    <task id="LOCAL-00005" summary="修改DAO接口（合并updateStar、updateTool为updateStarAndTool）">
+      <created>1558795211622</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1558795211622</updated>
+    </task>
+    <task id="LOCAL-00006" summary="增加了通关后的addSingleRecord方法">
+      <created>1558940065061</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1558940065061</updated>
+    </task>
+    <task id="LOCAL-00007" summary="增加gameScene的返回按钮失败">
+      <created>1558944275804</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1558944275804</updated>
+    </task>
+    <task id="LOCAL-00008" summary="实现单人对战">
+      <created>1558971738098</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1558971738099</updated>
+    </task>
+    <task id="LOCAL-00009" summary="实现单人对战">
+      <created>1559056819845</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1559056819846</updated>
+    </task>
+    <task id="LOCAL-00010" summary="部分增加代码">
+      <created>1559056989827</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1559056989827</updated>
+    </task>
+    <task id="LOCAL-00011" summary="debug">
+      <created>1559092117803</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1559092117803</updated>
+    </task>
+    <task id="LOCAL-00012" summary="增加云函数login的接口描述">
+      <created>1559093776285</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1559093776285</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="12055000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-11" y="-11" width="1942" height="1042" extended-state="6" />
+    <layout>
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="FindBugs-IDEA" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32781065" sideWeight="0.50215983" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32781065" sideWeight="0.49784017" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="CheckStyle" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38336933" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Statistic" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Analysis" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="game的部分代码" />
+    <MESSAGE value="game的部分代码：初始地图的生成、拼图移动、使用道具（部分）、判断是否结束" />
+    <MESSAGE value="完成DAO的部分接口" />
+    <MESSAGE value="修改DAO接口（合并updateStar、updateTool为updateStarAndTool）" />
+    <MESSAGE value="增加了通关后的addSingleRecord方法" />
+    <MESSAGE value="增加gameScene的返回按钮失败" />
+    <MESSAGE value="实现单人对战" />
+    <MESSAGE value="部分增加代码" />
+    <MESSAGE value="debug" />
+    <MESSAGE value="增加云函数login的接口描述" />
+    <option name="LAST_COMMIT_MESSAGE" value="增加云函数login的接口描述" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

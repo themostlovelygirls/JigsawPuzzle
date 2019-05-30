@@ -20,7 +20,7 @@ cc.Class({
         this.row = i
         this.column = j
 
-        console.log("set block pos, i: " + i + "  j: " + j)
+        // console.log("set block pos, i: " + i + "  j: " + j)
     },
     getPos() {
         let pos = [this.row, this.column]

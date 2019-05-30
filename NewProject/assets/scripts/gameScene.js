@@ -137,6 +137,9 @@ cc.Class({
     },
     // 根据秒数返回“倒计时：##：##”的字符串
     getFormatTime(time) {
+        if(time < 0) {
+            time = 0
+        }
         let minutes = Math.floor(time / 60)
         let second = time - minutes * 60
         let str = " : "
