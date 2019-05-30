@@ -21,6 +21,8 @@ cc.Class({
         battleBtn: cc.Button,
         albumBtn: cc.Button,
         recordBtn: cc.Button,
+        shopBtn: cc.Button,
+        helpBtn: cc.Button,
         bg: cc.Node
     },
 
@@ -89,6 +91,18 @@ cc.Class({
         //cc.log("click!" + customEventData);
         this.node.runAction(cc.sequence(cc.fadeOut(0.5),cc.callFunc(function(){
             cc.director.loadScene("albumScene");
+        })));
+    },
+
+    clickShopBtn (event, customEventData) {
+        this.node.runAction(cc.sequence(cc.fadeOut(0.5),cc.callFunc(function(){
+            cc.director.loadScene("shopScene");
+        })));
+    },
+
+    clickHelpBtn (event, customEventData) {
+        this.node.runAction(cc.sequence(cc.fadeOut(0.5),cc.callFunc(function(){
+            cc.director.loadScene("helpScene");
         })));
     }
 });
