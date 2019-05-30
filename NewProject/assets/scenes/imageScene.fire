@@ -41,8 +41,8 @@
     },
     "_scale": {
       "__type__": "cc.Vec3",
-      "x": 0.36403046481247625,
-      "y": 0.36403046481247625,
+      "x": 0.17508544921875,
+      "y": 0.17508544921875,
       "z": 1
     },
     "_quat": {
@@ -753,8 +753,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 180,
-      "height": 100
+      "width": 100,
+      "height": 60
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -798,8 +798,8 @@
     "_useOriginalSize": false,
     "_string": "类别",
     "_N$string": "类别",
-    "_fontSize": 90,
-    "_lineHeight": 100,
+    "_fontSize": 50,
+    "_lineHeight": 60,
     "_enableWrapText": true,
     "_N$file": null,
     "_isSystemFontUsed": true,
