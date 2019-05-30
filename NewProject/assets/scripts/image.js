@@ -41,7 +41,7 @@ cc.Class({
                 console.log(self.allImages);
                 console.log("----")
                 self.initAllImages(self);
-                self.node.runAction(cc.fadeIn(0.5));
+                self.node.runAction(cc.fadeIn(3));
                 self.getUnlock();
             },
             fail: console.error

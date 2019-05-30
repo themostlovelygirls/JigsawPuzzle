@@ -64,8 +64,6 @@ cc.Class({
             record.getComponent('recordPrefab').setInfo(this.records[i]);
             let contentNode = this.recordScrollView.node.getChildByName('view').getChildByName('content');
             contentNode.addChild(record);
-            /* record.setPosition(-300, 100 - i * 250); */
-            /* this.recordScrollView.node.addChild(record); */
         }
     },
 

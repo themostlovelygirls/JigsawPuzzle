@@ -41,8 +41,8 @@
     },
     "_scale": {
       "__type__": "cc.Vec3",
-      "x": 0.273515625,
-      "y": 0.273515625,
+      "x": 0.20111211607969365,
+      "y": 0.20111211607969365,
       "z": 1
     },
     "_quat": {
@@ -232,8 +232,8 @@
     "_color": {
       "__type__": "cc.Color",
       "r": 255,
-      "g": 255,
-      "b": 255,
+      "g": 244,
+      "b": 233,
       "a": 255
     },
     "_contentSize": {
@@ -319,7 +319,7 @@
     "_position": {
       "__type__": "cc.Vec3",
       "x": 360,
-      "y": 673,
+      "y": 639,
       "z": 0
     },
     "_scale": {
@@ -582,14 +582,14 @@
     "_color": {
       "__type__": "cc.Color",
       "r": 255,
-      "g": 255,
-      "b": 255,
+      "g": 244,
+      "b": 233,
       "a": 255
     },
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 720,
-      "height": 600
+      "height": 550
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -599,7 +599,7 @@
     "_position": {
       "__type__": "cc.Vec3",
       "x": 0,
-      "y": 710,
+      "y": 800,
       "z": 0
     },
     "_scale": {
@@ -741,8 +741,8 @@
     },
     "_position": {
       "__type__": "cc.Vec3",
-      "x": -360.7,
-      "y": -160,
+      "x": -350,
+      "y": -110,
       "z": 0
     },
     "_scale": {
@@ -1024,7 +1024,7 @@
     "_position": {
       "__type__": "cc.Vec3",
       "x": -2.2737367544323206e-13,
-      "y": -270,
+      "y": -220,
       "z": 0
     },
     "_scale": {
@@ -1371,7 +1371,7 @@
     "_position": {
       "__type__": "cc.Vec3",
       "x": 24,
-      "y": -380,
+      "y": -330,
       "z": 0
     },
     "_scale": {
@@ -1456,7 +1456,7 @@
     "_position": {
       "__type__": "cc.Vec3",
       "x": 0,
-      "y": -510,
+      "y": -460,
       "z": 0
     },
     "_scale": {
@@ -1515,7 +1515,7 @@
     "_layoutSize": {
       "__type__": "cc.Size",
       "width": 720,
-      "height": 600
+      "height": 550
     },
     "_resize": 1,
     "_N$layoutType": 2,
@@ -1528,7 +1528,7 @@
     "_N$startAxis": 0,
     "_N$paddingLeft": 0,
     "_N$paddingRight": 0,
-    "_N$paddingTop": 50,
+    "_N$paddingTop": 0,
     "_N$paddingBottom": 50,
     "_N$spacingX": 0,
     "_N$spacingY": 50,
