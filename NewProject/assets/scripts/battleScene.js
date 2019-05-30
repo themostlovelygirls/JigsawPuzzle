@@ -23,8 +23,12 @@ cc.Class({
         map: null,
         lastTime: 0,
         timer: null,
-        room: "",
-        imageTexture: cc.Texture2D
+        room: "2019-5-30 01:24:26-1",
+        // imageTexture: cc.Texture2D
+        imageTexture: {
+            type: cc.Texture2D,
+            default: null
+        }
     },
 
     // LIFE-CYCLE CALLBACKS:
@@ -52,7 +56,14 @@ cc.Class({
         // TODO: 
         wx.cloud.init()
         this.difficulty = require('battleLocal').difficulty
-        this.room = require('battleLocal').room        
+        if(this.difficulty == 3) {
+            this.gap = 30
+        }else if(this.difficulty == 4) {
+            this.gap = 15
+        }else if(this.difficulty == 5) {
+            this.gap = 5
+        }
+        this.room = require('battleLocal').room
 
         // TODO: 获得目标图片
         console.log("获得目标图片")
@@ -83,20 +94,13 @@ cc.Class({
         //this.swapLabel.string = ": " + this.toolNum
     },
     // TODO: 显示头像
-    setImage (url, node) {
+    setImage(url, node) {
         // let self = this;
-        cc.loader.load(url , function (err, texture) {
+        cc.loader.load(url, function (err, texture) {
             node.spriteFrame = new cc.SpriteFrame(texture);
             // self.imageTexture = texture;
         })
     },
-    // 加载头像
-    // loadHead() {
-    //     // 得到图片url
-    //     let url = 'headImg';
-    //     let container = this.headImg.getComponent(cc.Sprite); //图片呈现位置
-    //     this.loadImg(container, url);
-    // },
     // 设置倒计时
     setTimer() {
         let minutes = this.difficulty * 2
@@ -111,7 +115,7 @@ cc.Class({
                 //clearInterval(self.timer)
                 console.log("time out, you lose")
 
-                // TODO: 调用云函数addBattleRecord  time=TIMEOUT
+                // 调用云函数addBattleRecord  time=TIMEOUT
                 self.notComplete()
                 let message = "就差一点点  QAQ"
                 let callback = function () {
@@ -159,7 +163,7 @@ cc.Class({
         }
         this.blocks = [];
 
-        this.map = gameLogic.initMap(this.difficulty);
+        this.map = require('battleLocal').map
         // console.log("map: " + this.map);
         let size = (cc.winSize.width - (this.difficulty + 1) * this.gap) / this.difficulty;
         let x = this.gap;
@@ -187,7 +191,6 @@ cc.Class({
                     let row = Math.floor((id - 1) / this.difficulty)
                     let col = (id - 1) - row * this.difficulty
                     let container = block.getComponent(cc.Sprite); //图片呈现位置
-                    // TODO: 显示模块图片
                     CutTool.setImage(container, col, row, this.difficulty, this.imageTexture)
                 } else {
                     url = "blank";
@@ -282,6 +285,52 @@ cc.Class({
     // 交换两格
     swap(x1, y1, x2, y2) {
         //console.log("swap: x1:" + x1 + " y1:" + y1 + " x2:" + x2 + " y2:" + y2)
+        // TODO: 判断对手是否成功
+        let self = this
+        wx.cloud.callFunction({
+            name: 'checkRivalState',
+            data: {
+                id: require('battleLocal').rivalId,
+                roomid: require('battleLocal').room
+            },
+            success: function (res) {
+                console.log("res: " + JSON.stringify(res))
+                console.log("result: " + JSON.stringify(res.result))
+                console.log("id: " + require('battleLocal').rivalId)
+                console.log("roomid: " + require('battleLocal').room)
+
+                if (res.result != "doing") {
+                    let message = require('battleLocal').rivalName + "先你一步完成了关卡"
+                    let costTime = TIMEOUT
+                    self.notComplete()
+                    if (res.message == "fail") {
+                        message = require('battleLocal').rivalName + "放弃比赛，你赢了"
+                        // TODO: 后台记录
+                        costTime = this.difficulty * 2 - this.lastTime
+                    }
+                    wx.cloud.callFunction({
+                        name: 'addBattleResult',
+                        data: {
+                            id: require('global').userid,
+                            room: self.room,
+                            time: costTime
+                        },
+                        success: function (res) {
+                            console.log("result: " + JSON.stringify(res.result))
+                        },
+                        fail: console.error
+                    })
+                    let callback = function () {
+                        self.node.runAction(cc.sequence(cc.fadeOut(0.5), cc.callFunc(function () {
+                            clearInterval(self.timer)
+                            cc.director.loadScene("mainScene");
+                        })));
+                    }
+                    Alert.show(message, callback, false)
+                }
+            },
+            fail: console.error
+        })
 
         let tmpId = this.map[x1][y1];
         this.map[x1][y1] = this.map[x2][y2];
@@ -320,7 +369,7 @@ cc.Class({
                 },
                 fail: console.error
             })
-            let message = "恭喜你，成功击败" + require('battleLocal').rivalName + "  ヾ(✿ﾟ▽ﾟ)ノ"
+            let message = "恭喜你，成功击败" + require('battleLocal').rivalName + " ヾ(✿ﾟ▽ﾟ)ノ"
             if (!result) {
                 message = "就差一点点  QAQ"
             }

@@ -64,6 +64,13 @@ cc.Class({
         require('gameLocal').swap2_y = null
         require('gameLocal').inSwapMode = false
         this.difficulty = require('global').difficulty
+        if(this.difficulty == 3) {
+            this.gap = 30
+        }else if(this.difficulty == 4) {
+            this.gap = 15
+        }else if(this.difficulty == 5) {
+            this.gap = 5
+        }
 
         // 显示目标图片
         this.goalImg.spriteFrame = new cc.SpriteFrame(require('global').imageTexture)
