@@ -9,5 +9,6 @@ module.exports = {
     image: null,
     avatarUrl: "",
     username: "",
+    battleLevel: "",
 
 };

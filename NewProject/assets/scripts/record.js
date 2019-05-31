@@ -17,23 +17,11 @@ cc.Class({
     },
 
     initRecord() {
+
+        this.level.string = require('global').battleLevel;
         
-        this.records = [{
-            time:"5月8日",
-            rival:"xuan",
-            result:true
-        },
-        {
-            time:"5月9日",
-            rival:"xuan",
-            result:false
-        }
-        ];
-        let rlen = this.records.length;
-
-
-        /* let self = this; */
-       /*  wx.cloud.callFunction({
+        let self = this;
+        wx.cloud.callFunction({
             name: 'getBattleRecord',
             data: {
                 id: require('global').userid,
@@ -42,19 +30,24 @@ cc.Class({
                 self.records = res.result;
 
                 let rlen = self.records.length;
+
+                if(rlen !== 0) {
+                    self.tip.node.active = false;
+                }
+        
                 for (let i = 0; i < rlen; i++) {
-                    let record = cc.instantiate(this.recordPrefab);
+                    let record = cc.instantiate(self.recordPrefab);
+                    console.log(record);
                     record.getComponent('recordPrefab').setInfo(self.records[i]);
-                    let contentNode = this.recordScrollView.node.getChildByName('view').getChildByName('content');
+                    let contentNode = self.recordScrollView.node.getChildByName('view').getChildByName('content');
                     contentNode.addChild(record);
-                    
                 }
 
             },
             fail: console.error
-        }) */
+        })
 
-        if(rlen !== 0) {
+        /* if(rlen !== 0) {
             this.tip.node.active = false;
         }
 
@@ -64,7 +57,7 @@ cc.Class({
             record.getComponent('recordPrefab').setInfo(this.records[i]);
             let contentNode = this.recordScrollView.node.getChildByName('view').getChildByName('content');
             contentNode.addChild(record);
-        }
+        } */
     },
 
     clickBackBtn(event, customEventData) {

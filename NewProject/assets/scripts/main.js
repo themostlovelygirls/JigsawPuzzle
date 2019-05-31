@@ -1,12 +1,4 @@
-// Learn cc.Class:
-//  - [Chinese] https://docs.cocos.com/creator/manual/zh/scripting/class.html
-//  - [English] http://docs.cocos2d-x.org/creator/manual/en/scripting/class.html
-// Learn Attribute:
-//  - [Chinese] https://docs.cocos.com/creator/manual/zh/scripting/reference/attributes.html
-//  - [English] http://docs.cocos2d-x.org/creator/manual/en/scripting/reference/attributes.html
-// Learn life-cycle callbacks:
-//  - [Chinese] https://docs.cocos.com/creator/manual/zh/scripting/life-cycle-callbacks.html
-//  - [English] https://www.cocos2d-x.org/docs/creator/manual/en/scripting/life-cycle-callbacks.html
+import levelTool from './levelEnum'
 
 cc.Class({
     extends: cc.Component,
@@ -55,9 +47,10 @@ cc.Class({
                 console.log(res.result);
                 self.setOnlineImg(require('global').avatarUrl, self.userUrl);
                 console.log("avatar: "+require('global').avatarUrl);
-                self.level.string = '等级: '+ res.result.level;
+                self.level.string = '等级: '+ levelTool.getLevel(res.result.level);
                 self.grade.string = '积分: '+ res.result.grade;
-                self.battleLevel.string = '对战等级: '+ res.result.battle_level;
+                self.battleLevel.string = '对战等级: '+ levelTool.getBattleLevel(res.result.battle_level);
+                require('global').battleLevel = self.battleLevel.string;
                 self.battleGrade.string = '对战积分: '+ res.result.battle_grade;
             },
             fail: console.error
