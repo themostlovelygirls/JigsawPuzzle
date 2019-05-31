@@ -31,8 +31,8 @@ cc.Class({
 
                 let rlen = self.records.length;
 
-                if(rlen !== 0) {
-                    self.tip.node.active = false;
+                if(rlen === 0) {
+                    self.tip.node.active = true;
                 }
         
                 for (let i = 0; i < rlen; i++) {

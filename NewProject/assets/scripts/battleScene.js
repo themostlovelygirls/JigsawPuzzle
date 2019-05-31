@@ -1,6 +1,5 @@
 import * as gameLogic from './gameLogic';
 import * as Alert from './Alert';
-//import Category from './categoryEnum'
 import CutTool from './cutImage'
 const MIN_LENGTH = 50;
 const TIMEOUT = 20 * 60
@@ -34,6 +33,8 @@ cc.Class({
     // LIFE-CYCLE CALLBACKS:
 
     onLoad() {
+        // TODO: 
+        // wx.cloud.init()
         this.node.runAction(cc.fadeIn(0.5));
     },
     // 动态加载图片
@@ -53,8 +54,6 @@ cc.Class({
         });
     },
     start() {
-        // TODO: 
-        wx.cloud.init()
         this.difficulty = require('battleLocal').difficulty
         if(this.difficulty == 3) {
             this.gap = 30
@@ -112,10 +111,10 @@ cc.Class({
             self.lastTime--
             self.timerLabel.string = self.getFormatTime(self.lastTime);
             if (self.lastTime <= 0) {
-                //clearInterval(self.timer)
+                clearInterval(self.timer)
                 console.log("time out, you lose")
 
-                // 调用云函数addBattleRecord  time=TIMEOUT
+                // 超时失败，调用云函数addBattleRecord  time=TIMEOUT
                 self.notComplete()
                 let message = "就差一点点  QAQ"
                 let callback = function () {
@@ -164,7 +163,9 @@ cc.Class({
         this.blocks = [];
 
         this.map = require('battleLocal').map
-        // console.log("map: " + this.map);
+        //TODO:  this.map = gameLogic.initMap(this.difficulty);
+        console.log("map: " + JSON.stringify(this.map));
+        
         let size = (cc.winSize.width - (this.difficulty + 1) * this.gap) / this.difficulty;
         let x = this.gap;
         let y = size * (0.5 + this.difficulty - 1) + this.gap * (this.difficulty - 1);
@@ -299,15 +300,24 @@ cc.Class({
                 console.log("id: " + require('battleLocal').rivalId)
                 console.log("roomid: " + require('battleLocal').room)
 
+                console.log("对手状态： " + res.result)
+
                 if (res.result != "doing") {
+                    clearInterval(self.timer)
                     let message = require('battleLocal').rivalName + "先你一步完成了关卡"
                     let costTime = TIMEOUT
                     self.notComplete()
-                    if (res.message == "fail") {
+                    if (res.result == "fail") {
+                        console.log("res: fail 对手放弃比赛")
                         message = require('battleLocal').rivalName + "放弃比赛，你赢了"
                         // TODO: 后台记录
-                        costTime = this.difficulty * 2 - this.lastTime
+                        costTime = this.difficulty * 2 * 60 - this.lastTime
                     }
+                    console.log("message: " + message)
+                    console.log("to call func addBattleResult")
+                    console.log("id: " + require('global').userid)
+                    console.log("room: " + self.room)
+                    console.log("time: " + costTime)
                     wx.cloud.callFunction({
                         name: 'addBattleResult',
                         data: {
@@ -322,10 +332,11 @@ cc.Class({
                     })
                     let callback = function () {
                         self.node.runAction(cc.sequence(cc.fadeOut(0.5), cc.callFunc(function () {
-                            clearInterval(self.timer)
+                            // clearInterval(self.timer)
                             cc.director.loadScene("mainScene");
                         })));
                     }
+                    // console.log("message: " + message)
                     Alert.show(message, callback, false)
                 }
             },
@@ -352,10 +363,17 @@ cc.Class({
         if (this.isFinished()) {
             clearInterval(this.timer)
 
-            // TODO: 调用云函数addBattleRecord
-            let result = true
+            // TODO: 完成拼图，调用云函数addBattleRecord
+            // let result = true
             let self = this
-            let costTime = this.difficulty * 2 - this.lastTime
+            let costTime = this.difficulty * 2 * 60 - this.lastTime
+
+            console.log("成功击败对手")
+            console.log("to call func addBattleResult")
+            console.log("id: " + require('global').userid)
+            console.log("room: " + self.room)
+            console.log("time: " + costTime)
+
             wx.cloud.callFunction({
                 name: 'addBattleResult',
                 data: {
@@ -364,15 +382,12 @@ cc.Class({
                     time: costTime
                 },
                 success: function (res) {
-                    console.log("result: " + JSON.stringify(res.result))
-                    result = res.result
+                    console.log("成功击败对手 result: " + JSON.stringify(res.result))
+                    // result = res.result
                 },
                 fail: console.error
             })
             let message = "恭喜你，成功击败" + require('battleLocal').rivalName + " ヾ(✿ﾟ▽ﾟ)ノ"
-            if (!result) {
-                message = "就差一点点  QAQ"
-            }
             let callback = function () {
                 self.node.runAction(cc.sequence(cc.fadeOut(0.5), cc.callFunc(function () {
                     cc.director.loadScene("mainScene");
@@ -388,9 +403,9 @@ cc.Class({
         let message = "退出对战？（退出对战将判定为失败）"
         let callback = function () {
             self.node.runAction(cc.sequence(cc.fadeOut(0.5), cc.callFunc(function () {
+                clearInterval(self.timer)
                 // TODO: 调用云函数addBattleRecord  time=TIMEOUT
                 self.notComplete()
-                clearInterval(self.timer)
                 cc.director.loadScene("mainScene");
             })));
         }
@@ -400,7 +415,7 @@ cc.Class({
     notComplete() {
         console.log("未完成拼图")
         let self = this
-        //let costTime = this.difficulty * 2 - this.lastTime
+        //let costTime = this.difficulty * 2 * 60 - this.lastTime
         wx.cloud.callFunction({
             name: 'addBattleResult',
             data: {
@@ -410,7 +425,6 @@ cc.Class({
             },
             success: function (res) {
                 console.log("result: " + JSON.stringify(res.result))
-
             },
             fail: console.error
         })
