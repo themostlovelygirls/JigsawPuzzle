@@ -23,7 +23,13 @@ cc.Class({
         this.date.string = info.time;
 
         let name = require('global').username;
+        if(name.length > 4) {
+            name = name.substr(0, 4) + "...";
+        }
         let name2 = info.rival;
+        if(name2.length > 4) {
+            name2 = name2.substr(0, 4) + "...";
+        }
 
         this.rname.string = name + " VS " + name2;
         
