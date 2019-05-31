@@ -35,7 +35,7 @@ cc.Class({
                     self.tip.node.active = true;
                 }
         
-                for (let i = 0; i < rlen; i++) {
+                for (let i = rlen - 1; i >= 0; i--) {
                     let record = cc.instantiate(self.recordPrefab);
                     console.log(record);
                     record.getComponent('recordPrefab').setInfo(self.records[i]);
