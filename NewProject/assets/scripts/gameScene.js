@@ -106,7 +106,7 @@ cc.Class({
                 self.level = res.result.level
                 self.grade = res.result.grade
 
-                self.swapLabel.string = self.toolNum
+                self.swapLabel.string = ": " + self.toolNum;
             },
             fail: console.error
         })

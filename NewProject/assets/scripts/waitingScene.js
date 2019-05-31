@@ -51,6 +51,7 @@ cc.Class({
                 success: function (res) {
                     console.log("result: " + JSON.stringify(res.result))
                     if(res.result != null && res.result.length == 2) {
+                        clearInterval(self.timer)
                         console.log("匹配成功")
 
                         let result = res.result
@@ -60,7 +61,7 @@ cc.Class({
                             rival = result[0]
                         }
                         console.log("player: " + JSON.stringify(player))
-                        console.log("rival: " + JSON.stringify(rival))
+                        console.log("rival:  " + JSON.stringify(rival))
 
                         require('battleLocal').room = player.room
                         require('battleLocal').imageUrl = player.url
@@ -71,7 +72,6 @@ cc.Class({
                         require('battleLocal').difficulty = player.difficulty
                         require('battleLocal').map = player.map
 
-                        clearInterval(self.timer)
                         let callback = function () {
                             self.node.runAction(cc.sequence(cc.fadeOut(0.5), cc.callFunc(function () {
                                 cc.director.loadScene("battleScene");

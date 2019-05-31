@@ -311,7 +311,7 @@ cc.Class({
                         console.log("res: fail 对手放弃比赛")
                         message = require('battleLocal').rivalName + "放弃比赛，你赢了"
                         // TODO: 后台记录
-                        costTime = this.difficulty * 2 * 60 - this.lastTime
+                        costTime = self.difficulty * 2 * 60 - self.lastTime
                     }
                     console.log("message: " + message)
                     console.log("to call func addBattleResult")
